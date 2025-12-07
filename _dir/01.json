@@ -4,9 +4,7 @@
       "name": "Arena Sports",
       "logo": "https://i.ibb.co.com/h2bcqhS/arenasp1sk.png",
       "url": "https://dash3.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd",
-      "servers": {
-		  "com.widevine.alpha":"https://drm.antik.sk/widevine/key"
-	  }
+      "servers": "https://drm.antik.sk/widevine/key"
     }, 
     {
       "name": "Zee Bihar Jharkhand",
