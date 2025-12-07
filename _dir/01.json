@@ -3,7 +3,7 @@
     {
       "name": "Zee Bihar Jharkhand",
       "logo": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/5zkMvEbF.png",
-      "mpd": "https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+      "url": "https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
       "clearkey": {
         "keyId": "1779c27b9d077a3ba0c9cc1bb9a94b9f",
         "key": "cc5cf3b7928fb9e0a1ee6a8b566f0a8e"
@@ -12,7 +12,7 @@
     {
       "name": "Zee Kannada HD",
       "logo": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/1PrOGXAh.png",
-      "mpd": "https://linear003-gb-dash1-prd-cf.cdn.skycdp.com/016a/Content/DASH_003_sd/Live/channel(skysportscricket)/manifest_sd.mpd",
+      "url": "https://linear003-gb-dash1-prd-cf.cdn.skycdp.com/016a/Content/DASH_003_sd/Live/channel(skysportscricket)/manifest_sd.mpd",
       "clearkey": {
         "keyId": "0003f2a72d21efd159d45a3a74decd84",
         "key": "df0ec40586d641f3d4728ab5fd62adc3"
@@ -21,7 +21,7 @@
     {
       "name": "Zee TV SD",
       "logo": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/yHNSuG1V.png",
-      "mpd": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetv/default/manifest.mpd",
+      "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetv/default/manifest.mpd",
       "clearkey": {
         "keyId": "ed068cf84f0640ccbc7c0e395c0a272e",
         "key": "bb722190f2bb446391020411a7d0828b"
