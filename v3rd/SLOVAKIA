@@ -3,14 +3,14 @@
 #EXTINF:-1 tvg-id="arenaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/96889c52e68b2e93c9e438f61899ef6d.svg" group-title="Sports", Arena Sports
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=widevine
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
 https://dash2.antik.sk/stream/nvidia_arena_sport1/playlist_cenc.mpd
 
 #EXTINF:-1 tvg-id="arenaSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/dc63fb9fca9fc2806a0a920ccf3121b5.svg" group-title="Sports", Arena Sports 2
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=widevine
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
 https://dash2.antik.sk/stream/hisi_as2/playlist_cbcs.mpd
 
