@@ -1,46 +1,46 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-id="arenaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/96889c52e68b2e93c9e438f61899ef6d.svg" group-title="Sports", Arena Sports(WV)
+#EXTINF:-1 tvg-id="novaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/c4351aa96878e6bc83c99974b82c1912.svg" group-title="Sports", Nova Sports(WV)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
-https://dash3.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_nova_sport1/playlist_cenc.mpd
 
-#EXTINF:-1 tvg-id="arenaSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/dc63fb9fca9fc2806a0a920ccf3121b5.svg" group-title="Sports", Arena Sports 2(WV)
+#EXTINF:-1 tvg-id="novaSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/bd96dc15f536a2fafb31d500ef5c84c2.svg" group-title="Sports", Nova Sports 2(WV)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
-https://dash2.antik.sk/stream/hisi_as2/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_nova_sport2/playlist_cenc.mpd
 
-#EXTINF:-1 tvg-id="arenaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/96889c52e68b2e93c9e438f61899ef6d.svg" group-title="Sports", Arena Sports(CK)
+#EXTINF:-1 tvg-id="euroSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/723410b6d48888070012c0691a65afef.svg" group-title="Sports", Eurosports(CK)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d
-https://dash3.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_eurosport1/playlist_cenc.mpd
 
-#EXTINF:-1 tvg-id="arenaSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/dc63fb9fca9fc2806a0a920ccf3121b5.svg" group-title="Sports", Arena Sports 2(CK)
+#EXTINF:-1 tvg-id="euroSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/53556522790a0b05d647d7d5c27eed51.svg" group-title="Sports", Eurosports 2(CK)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d
-https://dash2.antik.sk/stream/hisi_as2/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_eurosport2/playlist_cenc.mpd
 
-#EXTINF:-1 tvg-id="arenaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/96889c52e68b2e93c9e438f61899ef6d.svg" group-title="Sports", Arena Sports(CK2)
+#EXTINF:-1 tvg-id="Sports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/dcb376772bf63b123d92004a10a03b23.svg" group-title="Sports", ASports(CK2)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key={"11223344556677889900112233445566":"4b80724d0ef86bcb2c21f7999d67739d"}
-https://dash3.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cbcs.mpd
 
-#EXTINF:-1 tvg-id="arenaSports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/dc63fb9fca9fc2806a0a920ccf3121b5.svg" group-title="Sports", Arena Sports 2(CK2)
+#EXTINF:-1 tvg-id="Sports2.sk" tvg-logo="https://www.antik.sk/assets/img/channels/0f51ec91824fb629399ec84e2c6daac6.svg" group-title="Sports", Sports 2(CK2)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key={"11223344556677889900112233445566":"4b80724d0ef86bcb2c21f7999d67739d"}
-https://dash2.antik.sk/stream/hisi_as2/playlist_cbcs.mpd
+https://dash2.antik.sk/stream/nvidia_sport2/playlist_cbcs.mpd
 
 #EXTINF:-1 tvg-id="arenaSports.sk" tvg-logo="https://www.antik.sk/assets/img/channels/96889c52e68b2e93c9e438f61899ef6d.svg" group-title="Sports", Arena Sports(CK3)
 #KODIPROP:inputstreamaddon=inputstream.adaptive
