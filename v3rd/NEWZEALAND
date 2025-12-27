@@ -12,7 +12,7 @@ https://dice-live-oc.akamaized.net/hdntl=exp=1766941226~acl=%2f*~id=93950c55-b10
 #KODIPROP:inputstream.adaptive.license_key=aefc2c8d1c8840f1b6981f856c9269ba:cf8ea114c45b4d6596b2748258ab74d6
 https://dice-live-oc.akamaized.net/hdntl=exp=1766941226~acl=%2f*~id=ecae2191-ad55-4da6-a1c9-723b92afb4d9~data=hdntl,dWlkPTY1OTg2NnxkY2Uuc2t5bnomaXA9MTAzLjc1LjExLjUzJmV4cD0xNzY2OTQxMjUzJmVpZD0yMTkwMjYmY2lkPWRjZS5za3lueiZvaWQ9MzE4JnR5cGU9TElWRQ~hmac=bc0e85061691ae3cccda9a3711cadab20567d44f653e166dc84addebc0fc4582/dash/live/2093749/219026-314033/manifest-d.mpd
 
-#EXTINF:-1 tvg-id="SkySports2.nz" tvg-name="Sky Sports 2 NZ FHD" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/ilzqfu1642606956.png" group-title="Sky Sports NZ", Sky Sports 2 NZ FHD
+#EXTINF:-1 tvg-id="SkySports2.nz" tvg-name="Sky Sports 2 NZ FHD" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/ilzqfu1642606956.png" group-title="Sky Sports NZ", Sky Sports 2 FHD
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=708a98b352bd4418a73a028edd84da8f:b1fa5c2bca4c4b57b924b748564532cb
