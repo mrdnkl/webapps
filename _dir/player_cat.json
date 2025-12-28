@@ -1,0 +1,677 @@
+[
+  {
+    "category_id": "754",
+    "category_name": "AFCON (2025)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "578",
+    "category_name": "REAL 4K (2160P)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "740",
+    "category_name": "LIVE | CRICKET EVENT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "5",
+    "category_name": "CRICKET",
+    "parent_id": 0
+  },
+  {
+    "category_id": "726",
+    "category_name": "SPORTS | MLS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "234",
+    "category_name": "FOOTBALL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "550",
+    "category_name": "SPORTS | RUGBY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "356",
+    "category_name": " SPORTS | INDIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "342",
+    "category_name": "RACING | F1 MOTOGP",
+    "parent_id": 0
+  },
+  {
+    "category_id": "137",
+    "category_name": "SPORTS | FOX AUSTRALIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "353",
+    "category_name": "SPORTS | SKY UK (4K)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "483",
+    "category_name": "SPORTS | UK SPORTS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "139",
+    "category_name": "SPORTS | UK MIX",
+    "parent_id": 0
+  },
+  {
+    "category_id": "6",
+    "category_name": "SPORTS | SPORTS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "138",
+    "category_name": "SPORTS | GOLF",
+    "parent_id": 0
+  },
+  {
+    "category_id": "212",
+    "category_name": "SPORTS | TENNIS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "427",
+    "category_name": "SPORTS | DSTV SUPER (FHD)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "345",
+    "category_name": "SPORTS | DSTV SUPER",
+    "parent_id": 0
+  },
+  {
+    "category_id": "156",
+    "category_name": "SPORTS | ARABIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "85",
+    "category_name": "SPORTS | BEIN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "516",
+    "category_name": "NFL (LIVE ONLY MATCH TIME)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "411",
+    "category_name": "HUB PREMIER",
+    "parent_id": 0
+  },
+  {
+    "category_id": "98",
+    "category_name": "PAKISTAN NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "4",
+    "category_name": "PAKISTAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "338",
+    "category_name": "INDIA ENTERTAINMENT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "339",
+    "category_name": "INDIA HINDI MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "340",
+    "category_name": "INDIA ENGLISH MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "337",
+    "category_name": "INDIA DOCUMENTARY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "341",
+    "category_name": "INDIA MUSIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "77",
+    "category_name": "INDIAN NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "18",
+    "category_name": "INDIAN SD",
+    "parent_id": 0
+  },
+  {
+    "category_id": "247",
+    "category_name": "INDIAN ACTIVE",
+    "parent_id": 0
+  },
+  {
+    "category_id": "731",
+    "category_name": "TAMIL | NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "732",
+    "category_name": "TAMIL | ENTERTAINMENT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "733",
+    "category_name": "TAMIL | MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "72",
+    "category_name": "TAMIL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "73",
+    "category_name": "TELUGU",
+    "parent_id": 0
+  },
+  {
+    "category_id": "290",
+    "category_name": "TELUGU MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "729",
+    "category_name": "MALAYALAM | MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "727",
+    "category_name": "MALAYALAM | NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "730",
+    "category_name": "MALAYALAM | SONGS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "728",
+    "category_name": "MALAYALAM | ENTRTNMNT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "81",
+    "category_name": "KANNADA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "291",
+    "category_name": "KANNADA MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "75",
+    "category_name": "MARATHI",
+    "parent_id": 0
+  },
+  {
+    "category_id": "76",
+    "category_name": "GUJARATI",
+    "parent_id": 0
+  },
+  {
+    "category_id": "405",
+    "category_name": "Oriya",
+    "parent_id": 0
+  },
+  {
+    "category_id": "7",
+    "category_name": "PUNJABI",
+    "parent_id": 0
+  },
+  {
+    "category_id": "9",
+    "category_name": "BANGLA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "292",
+    "category_name": "BANGLA MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "140",
+    "category_name": "Assam",
+    "parent_id": 0
+  },
+  {
+    "category_id": "32",
+    "category_name": "KIDS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "82",
+    "category_name": "ENGLISH NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "3",
+    "category_name": "UK| ENTERTAINMENT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "19",
+    "category_name": "UK| ASIAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "410",
+    "category_name": "UK| KIDS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "417",
+    "category_name": "UK| NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "413",
+    "category_name": "UK| MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "414",
+    "category_name": "UK| GENERAL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "416",
+    "category_name": "UK| MUSIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "415",
+    "category_name": "UK| DOCUMENTARY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "428",
+    "category_name": "DSTV | ENTERTAINMENT (FHD)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "429",
+    "category_name": "DSTV | MOVIES (FHD)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "430",
+    "category_name": "DSTV | KIDS (FHD)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "431",
+    "category_name": "DSTV | NEWS (FHD)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "343",
+    "category_name": "DSTV | ENTERTAINMENT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "344",
+    "category_name": "DSTV | MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "347",
+    "category_name": "DSTV | KIDS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "346",
+    "category_name": "DSTV | NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "336",
+    "category_name": "AFRICA CANAL+",
+    "parent_id": 0
+  },
+  {
+    "category_id": "360",
+    "category_name": "PAKISTANI SINGERS 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "194",
+    "category_name": "USA ASIAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "2",
+    "category_name": "USA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "24",
+    "category_name": "US : 24X7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "190",
+    "category_name": "PPV (LIVE ONLY MATCH TIME)",
+    "parent_id": 0
+  },
+  {
+    "category_id": "123",
+    "category_name": "ISLAMIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "272",
+    "category_name": "Pakistan Movies 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "350",
+    "category_name": "24/7 PAK DRAMA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "274",
+    "category_name": "Bollywood Movies/Actors 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "270",
+    "category_name": "Bollywood Singers 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "282",
+    "category_name": "Bollywood Movies 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "283",
+    "category_name": "HINDI WEB SERIES 24X7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "275",
+    "category_name": "ENGLISH Movies 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "57",
+    "category_name": "NETFLIX MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "280",
+    "category_name": "AMAZON MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "285",
+    "category_name": "PUNJABI MOVIES 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "287",
+    "category_name": "PUNJABI SINGERS 24/7",
+    "parent_id": 0
+  },
+  {
+    "category_id": "583",
+    "category_name": "NORWAY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "582",
+    "category_name": "FINLAND",
+    "parent_id": 0
+  },
+  {
+    "category_id": "42",
+    "category_name": "SRI LANKA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "141",
+    "category_name": "NEW ZEALAND",
+    "parent_id": 0
+  },
+  {
+    "category_id": "560",
+    "category_name": "BHOJPURI",
+    "parent_id": 0
+  },
+  {
+    "category_id": "561",
+    "category_name": "CHRISTIAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "48",
+    "category_name": "MALAYSIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "556",
+    "category_name": "UAE",
+    "parent_id": 0
+  },
+  {
+    "category_id": "555",
+    "category_name": "ARABIC MUSIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "554",
+    "category_name": "MOROCCO",
+    "parent_id": 0
+  },
+  {
+    "category_id": "553",
+    "category_name": "ALGERIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "213",
+    "category_name": "PREMIUM",
+    "parent_id": 0
+  },
+  {
+    "category_id": "548",
+    "category_name": "SYRIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "549",
+    "category_name": "LEBANON",
+    "parent_id": 0
+  },
+  {
+    "category_id": "101",
+    "category_name": "INDONESIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "542",
+    "category_name": "SPORTS | OPTUS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "543",
+    "category_name": "SPORTS | SPARK",
+    "parent_id": 0
+  },
+  {
+    "category_id": "90",
+    "category_name": "PHILIPPINES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "10",
+    "category_name": "GREEK",
+    "parent_id": 0
+  },
+  {
+    "category_id": "14",
+    "category_name": "ITALY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "11",
+    "category_name": "FRANCE",
+    "parent_id": 0
+  },
+  {
+    "category_id": "13",
+    "category_name": "ARABIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "165",
+    "category_name": "ARABIC NEWS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "86",
+    "category_name": "MBC ARABIC",
+    "parent_id": 0
+  },
+  {
+    "category_id": "87",
+    "category_name": "BEIN MOVIES",
+    "parent_id": 0
+  },
+  {
+    "category_id": "175",
+    "category_name": "SHAHED BOX",
+    "parent_id": 0
+  },
+  {
+    "category_id": "129",
+    "category_name": "IRAQ",
+    "parent_id": 0
+  },
+  {
+    "category_id": "425",
+    "category_name": "CARIBBEAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "83",
+    "category_name": "QATAR",
+    "parent_id": 0
+  },
+  {
+    "category_id": "178",
+    "category_name": "KUWAIT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "349",
+    "category_name": "24x7 live",
+    "parent_id": 0
+  },
+  {
+    "category_id": "180",
+    "category_name": "EGYPT",
+    "parent_id": 0
+  },
+  {
+    "category_id": "181",
+    "category_name": "SAUDI ARABIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "16",
+    "category_name": "PORTUGAL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "15",
+    "category_name": "GERMANY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "21",
+    "category_name": "NETHERLANDS",
+    "parent_id": 0
+  },
+  {
+    "category_id": "71",
+    "category_name": "RUSSIAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "20",
+    "category_name": "EXYU",
+    "parent_id": 0
+  },
+  {
+    "category_id": "25",
+    "category_name": "TURKEY",
+    "parent_id": 0
+  },
+  {
+    "category_id": "28",
+    "category_name": "AFGHANISTAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "35",
+    "category_name": "ROMANIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "54",
+    "category_name": "AUSTRALIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "60",
+    "category_name": "AUSTRIA",
+    "parent_id": 0
+  },
+  {
+    "category_id": "132",
+    "category_name": "ISRAEL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "64",
+    "category_name": "NEPAL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "66",
+    "category_name": "BRASIL",
+    "parent_id": 0
+  },
+  {
+    "category_id": "227",
+    "category_name": "OMAN",
+    "parent_id": 0
+  },
+  {
+    "category_id": "17",
+    "category_name": "FOR Adults",
+    "parent_id": 0
+  }
+]
