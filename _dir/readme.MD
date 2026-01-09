@@ -1,5 +1,7 @@
-<img height="50" src="https://geo.edge.pontiscloud.com:9002/images/51/CH_LOGO/160/160/0/0/2944696007343.png"/>
-(@A24/A24)
+|LOGO|CHANNEL|
+|:-----:|:-----:|
+|<img height="50" src="https://geo.edge.pontiscloud.com:9002/images/51/CH_LOGO/160/160/0/0/2944696007343.png"/>|
+|(@A24/A24)|
 <img height="50" src="https://geo.edge.pontiscloud.com:9002/images/56/CH_LOGO/160/160/0/0/8952752307709.png"/>
 (@C5N/C5N)
 <img height="50" src="https://geo.edge.pontiscloud.com:9002/images/361/CH_LOGO/160/160/0/0/34056872073.png"/>
