@@ -1,3 +1,181 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-id="AztecaUno.mx" tvg-logo="https://www.izzigo.tv/images/ch/24/LOGO/m/0" group-title="Entretenimiento", AZTECA UNO
+
+#EXTINF:-1 tvg-id="LasEstrellas.mx" tvg-logo="https://www.izzigo.tv/images/ch/14/LOGO/m/0" group-title="Entretenimiento", LAS ESTRELLAS
+
+#EXTINF:-1 tvg-id="5Nacional.mx" tvg-logo="https://www.izzigo.tv/images/ch/17/LOGO/m/0" group-title="Entretenimiento", CANAL 5
+
+#EXTINF:-1 tvg-id="Multimedios.mx" tvg-logo="https://www.izzigo.tv/images/ch/417/LOGO/m/0" group-title="Entretenimiento", MULTIMEDIOS
+
+#EXTINF:-1 tvg-id="Azteca 7 HD" tvg-logo="https://www.izzigo.tv/images/ch/18/LOGO/m/0" group-title="Entretenimiento", AZTECA 7 
+
+#EXTINF:-1 tvg-id="GalaTV9Nacional.mx" tvg-logo="https://www.izzigo.tv/images/ch/20/LOGO/m/0" group-title="Entretenimiento", NU9VE
+
+#EXTINF:-1 tvg-id="CanalOnce.mx" tvg-logo="https://www.izzigo.tv/images/ch/22/LOGO/m/0" group-title="Noticias", ONCE
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/97/LOGO/m/0" group-tittle="Noticias", DW
+
+#EXTINF:-1 tvg-id="WorldofBusinessIdeas.mx" tvg-logo="https://www.izzigo.tv/images/ch/127/LOGO/m/0" group-title="Noticias", WOBI
+
+#EXTINF:-1 tvg-id="CanalCatorce.mx" tvg-logo="https://www.izzigo.tv/images/ch/31/LOGO/m/0" group-title="Noticias", CANAL CATORCE
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/36/LOGO/m/0" group-title="Infantil", ONCE NIÑOS
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/113/LOGO/m/0" group-title="Infantil", TOONCAST
+
+#EXTINF:-1 tvg-id="Boomerang.mx" tvg-logo="https://www.izzigo.tv/images/ch/1550/LOGO/m/0" group-title="Infantil", CARTOONITO
+
+
+#EXTINF:-1 tvg-id="Nickelodeon.mx" tvg-logo="https://www.izzigo.tv/images/ch/107/LOGO/m/0" group-title="Infantil", NICK
+
+#EXTINF:-1 tvg-id="CartoonNetwork.mx"" tvg-logo="https://www.izzigo.tv/images/ch/105/LOGO/m/0" group-title="Infantil", CARTOON NETWORK
+
+#EXTINF:-1, tvg-id="DisneyChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/109/LOGO/m/0" group-title="Infantil", DISNEY CHANNEL
+
+#EXTINF:-1, DISNEY JR tvg-id="DisneyJunior.mx" tvg-logo="https://www.izzigo.tv/images/ch/112/LOGO/m/0" group-title="Infantil", DISNEY JR
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/296/LOGO/m/0" group-title="Infantil", TEEN NICK  
+
+
+#EXTINF:-1 tvg-id="BitMe.mx" tvg-logo="https://www.izzigo.tv/images/ch/108/LOGO/m/0" group-title="Infantil", BIT ME
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/315/LOGO/m/0" group-title="Old Movies", DE PELICULA +
+
+#EXTINF:-1 tvg-id="GoldenPlus.mx" tvg-logo="https://www.izzigo.tv/images/ch/316/LOGO/m/0" group-title="Cine & Series", GOLDEN +
+
+#EXTINF:-1 tvg-id="Golden.mx" tvg-logo="https://www.izzigo.tv/images/ch/150/LOGO/m/0" group-title="Cine & Series", GOLDEN
+
+#EXTINF:-1 tvg-id="GoldenEdge.mx" tvg-logo="https://www.izzigo.tv/images/ch/151/LOGO/m/0" group-title="Cine & Series", GOLDEN EDGE
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://www.izzigo.tv/images/ch/324/LOGO/m/0" group-title="Cine & Series", GOLDEN PREMIER
+
+#EXTINF:-1 tvg-id="TNTMexico.mx" tvg-logo="https://www.izzigo.tv/images/ch/152/LOGO/m/0" group-title="Cine & Series", TNT
+
+#EXTINF:-1 tvg-id="Space.mx" tvg-logo="https://www.izzigo.tv/images/ch/286/LOGO/m/0" group-title="Cine & Series", SPACE
+
+#EXTINF:-1 tvg-id="AMCLatinAmerica.us" tvg-logo="https://www.izzigo.tv/images/ch/153/LOGO/m/0" group-title="Cine & Series", AMC
+
+#EXTINF:-1 tvg-id="StudioUniversal.mx" tvg-logo="https://www.izzigo.tv/images/ch/154/LOGO/m/0" group-title="Cine & Series", STUDIO UNIVERSAL
+
+#EXTINF:-1 tvg-id="Cinecanal.mx" tvg-logo="https://www.izzigo.tv/images/ch/318/LOGO/m/0" group-title="Cine & Series", CINECANAL
+
+#EXTINF:-1 tvg-id="Cinemax.mx" tvg-logo="https://www.izzigo.tv/images/ch/159/LOGO/m/0" group-title="Cine & Series", CINEMAX
+
+#EXTINF:-1 tvg-id="ParamountChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/161/LOGO/m/0" group-title="Cine & Series", PARAMOUNT CHANNEL
+
+#EXTINF:-1 tvg-id="EEntertainment.mx" tvg-logo="https://www.izzigo.tv/images/ch/63/LOGO/m/0" group-title="Entretenimiento", E!
+
+#EXTINF:-1 tvg-id="SyfyLatin.us" tvg-logo="https://www.izzigo.tv/images/ch/86/LOGO/m/0" group-title="Cine & Series", SYFY
+
+
+#EXTINF:-1 tvg-id="AandE.mx" tvg-logo="https://www.izzigo.tv/images/ch/67/LOGO/m/0" group-title="Cine & Series", A&E
+
+#EXTINF:-1 tvg-id="TNTSeries.mx" tvg-id="TNTSeriesMexico.mx" tvg-logo="https://www.izzigo.tv/images/ch/80/LOGO/m/0" group-title="Cine & Series", TNT SERIES
+
+#EXTINF:-1 tvg-id="Telemundo.mx" tvg-logo="https://www.izzigo.tv/images/ch/52/LOGO/m/0" group-title="Entretenimiento", TELEMUNDO
+
+#EXTINF:-1 tvg-id="Unicable.mx" tvg-logo="https://www.izzigo.tv/images/ch/50/LOGO/m/0" group-title="Entretenimiento", UNICABLE
+
+#EXTINF:-1 tvg-id="MasChic.co" tvg-logo="https://www.izzigo.tv/images/ch/68/LOGO/m/0" group-title="Entretenimiento", MAS CHIC
+
+#EXTINF:-1 tvg-id="Lifetime.mx" tvg-logo="https://www.izzigo.tv/images/ch/81/LOGO/m/0" group-title="Entretenimiento", LIFETIME
+
+#EXTINF:-1 tvg-id="DistritoComedia.mx" tvg-logo="https://www.izzigo.tv/images/ch/73/LOGO/m/0" group-title="Entretenimiento", DISTRITO COMEDIA 
+
+#EXTINF:-1 tvg-id="StarChannelMexico.mx" tvg-logo="https://www.izzigo.tv/images/ch/54/LOGO/m/0" group-title="Cine & Series", STAR CHANNEL
+
+#EXTINF:-1 tvg-id="SonyChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/285/LOGO/m/0" group-title="Cine & Series", SONY
+
+#EXTINF:-1 tvg-id="WarnerChannel.mx" tvg-id="WarnerChannelMexico.mx" tvg-logo="https://www.izzigo.tv/images/ch/283/LOGO/m/0" group-title="Cine & Series", WARNER 
+
+#EXTINF:-1 tvg-id="UniversalChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/281/LOGO/m/0" group-title="Cine & Series", UNIVERSAL
+
+#EXTINF:-1 tvg-id="ComedyCentral.mx" tvg-logo="https://www.izzigo.tv/images/ch/58/LOGO/m/0" group-title="Entretenimiento", COMEDY CENTRAL
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/326/LOGO/m/0" group-title="Cine & Series", HBO
+
+#EXTINF:-1 tvg-id="HBO2.mx" tvg-logo="https://www.izzigo.tv/images/ch/167/LOGO/m/0" group-title="Cine & Series", HBO 2
+
+#EXTINF:-1 tvg-id="HBOPlus.mx" tvg-logo="https://www.izzigo.tv/images/ch/170/LOGO/m/0" group-title="Cine & Series", HBO PLUS
+
+#EXTINF:-1 tvg-id="Atreseries.es" tvg-logo="https://www.izzigo.tv/images/ch/278/LOGO/m/0" group-title="Entretenimiento", A3SERIES
+
+#EXTINF:-1 tvg-id="ESPN.mx" tvg-logo="https://www.izzigo.tv/images/ch/138/LOGO/m/0" group-title="Deportes", ESPN
+
+#EXTINF:-1 tvg-id="ESPN2.mx" tvg-logo="https://www.izzigo.tv/images/ch/139/LOGO/m/0" group-title="Deportes", ESPN 2
+
+#EXTINF:-1 tvg-id="ESPN3.mx" tvg-logo="https://www.izzigo.tv/images/ch/140/LOGO/m/0" group-title="Deportes", ESPN 3
+
+#EXTINF:-1 tvg-id="ESPN4.mx" tvg-logo="https://www.izzigo.tv/images/ch/311/LOGO/m/0" group-title="Deportes", ESPN 4
+
+#EXTINF:-1 tvg-id="FoxSports.mx" tvg-logo="https://www.izzigo.tv/images/ch/136/LOGO/m/0" group-title="Deportes", FOX SPORTS
+
+#EXTINF:-1 tvg-id="FoxSports2.mx" tvg-logo="https://www.izzigo.tv/images/ch/137/LOGO/m/0" group-title="Deportes", FOX SPORTS 2
+
+#EXTINF:-1 tvg-id="FoxSports3.mx" tvg-logo="https://www.izzigo.tv/images/ch/141/LOGO/m/0" group-title="Deportes", FOX SPORTS 3
+
+#EXTINF:-1 tvg-id="TUDN.mx" tvg-logo="https://www.izzigo.tv/images/ch/134/LOGO/m/0" group-title="Deportes", TUDN
+
+#EXTINF:-1 tvg-id="Afizzionados.mx" tvg-logo="https://www.izzigo.tv/images/ch/1140/LOGO/m/0" group-title="Deportes", AFIZZIONADOS
+
+#EXTINF:-1 tvg-id="AdrenalinaSportsNetwork.us" tvg-logo="https://www.izzigo.tv/images/ch/145/LOGO/m/0" group-title="Deportes", ADRENALINA SPORTS
+
+#EXTINF:-1 tvg-id="DiscoveryChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/115/LOGO/m/0" group-title="Mundo & Cultura", DISCOVERY CHANNEL 
+
+#EXTINF:-1 tvg-id="AnimalPlanet.mx" tvg-logo="https://www.izzigo.tv/images/ch/116/LOGO/m/0" group-title="Mundo & Cultura", ANIMAL PLANET
+
+#EXTINF:-1 tvg-id="HistoryChannel.mx" tvg-logo="https://www.izzigo.tv/images/ch/119/LOGO/m/0" group-title="Mundo & Cultura", HISTORY
+
+#EXTINF:-1 tvg-id="NatGeo.mx" tvg-logo="https://www.izzigo.tv/images/ch/117/LOGO/m/0" group-title="Mundo & Cultura", NAT GEO
+
+#EXTINF:-1 tvg-id="DiscoveryTheater.mx" tvg-logo="https://www.izzigo.tv/images/ch/300/LOGO/m/0" group-title="Mundo & Cultura", DISCOVERY THEATER
+
+#EXTINF:-1 tvg-id="DiscoveryHomeHealth.mx" tvg-logo="https://www.izzigo.tv/images/ch/65/LOGO/m/0" group-title="Mundo & Cultura", H&H
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/1241/LOGO/m/0" group-title="Mundo & Cultura", FOOD NETWORK
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/69/LOGO/m/0" group-title="Mundo & Cultura", ELGOURMET
+
+#EXTINF:-1 tvg-id="FilmAndArts.mx" tvg-logo="https://www.izzigo.tv/images/ch/129/LOGO/m/0" group-title="Mundo & Cultura", FILM & ARTS
+
+#EXTINF:-1 tvg-id="TLC.mx" tvg-logo="https://www.izzigo.tv/images/ch/66/LOGO/m/0" group-title="Mundo & Cultura", TLC
+
+#EXTINF:-1  tvg-logo="https://www.izzigo.tv/images/ch/125/LOGO/m/0" group-title="Mundo & Cultura", DISCOVERY SCIENCE 
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/302/LOGO/m/0" group-title="Mundo & Cultura", DISCOVERY WORLD
+
+#EXTINF:-1 tvg-id="InvestigationDiscovery.mx" tvg-logo="https://www.izzigo.tv/images/ch/280/LOGO/m/0" group-title="Mundo & Cultura",DISCOVERY INVESTIGATION 
+
+#EXTINF:-1 tvg-id="DiscoveryTurboLatinAmerica.pa" tvg-logo="https://www.izzigo.tv/images/ch/126/LOGO/m/0" group-title="Mundo & Cultura", DISCOVERY TURBO
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/78/LOGO/m/0" group-title="Musica", MTV 00s
+
+#EXTINF:-1 tvg-id="MTV.mx" tvg-logo="https://www.izzigo.tv/images/ch/75/LOGO/m/0" group-title="Musica", MTV
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/76/LOGO/m/0" group-title="Musica", MTV HITS
+
+#EXTINF:-1 tvg-logo="https://www.izzigo.tv/images/ch/111/LOGO/m/0" group-title="Musica", NICKMUSIC
+
+#EXTINF:-1 tvg-id="TelehitHD.mx" tvg-logo="https://www.izzigo.tv/images/ch/74/LOGO/m/0" group-title="Musica", TELEHIT 
+
+#EXTINF:-1 tvg-id="TelehitUrbano.mx" tvg-logo="https://www.izzigo.tv/images/ch/77/LOGO/m/0" group-title="Musica", TELEHIT URBANO
+
+#EXTINF:-1 tvg-id="TelehitPlus.mx" tvg-logo="https://www.izzigo.tv/images/ch/293/LOGO/m/0" group-title="Musica", TELEHIT +
+
+#EXTINF:-1 tvg-id="Bandamax.mx" tvg-logo="https://www.izzigo.tv/images/ch/79/LOGO/m/0" group-title="Musica", BANDAMAX
+
+#EXTINF:-1 tvg-id="ForoTv.mx" tvg-logo="https://www.izzigo.tv/images/ch/16/LOGO/m/0" group-title="Noticias", FOROTV 
+
+#EXTINF:-1 tvg-id="ADN40.mx" tvg-logo="https://www.izzigo.tv/images/ch/35/LOGO/m/0" group-title="Noticias", ADN 40
+
+#EXTINF:-1 tvg-id="MilenioTelevision.mx" tvg-logo="https://www.izzigo.tv/images/ch/25/LOGO/m/0" group-title="Noticias", MILENIO
+
+#EXTINF:-1, tvg-id="BloombergTV.mx" tvg-logo="https://www.izzigo.tv/images/ch/38/LOGO/m/0" group-title="Noticias", BLOOMBERG
+
+
+
+
 https://geo.edge.pontiscloud.com:9002/images/51/CH_LOGO/160/160/0/0/2944696007343.png
 @A24/live_dash_cld/A24.mpd
 https://geo.edge.pontiscloud.com:9002/images/56/CH_LOGO/160/160/0/0/8952752307709.png
