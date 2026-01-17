@@ -1,0 +1,620 @@
+#EXTINF:-1 tvg-logo="" group-title="Live", LIETUVOS RYTAS TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=20583cb65261469299cd084745682189:bb2d16f16ebb148dd0059c8682752db7
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562001/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", LRT LITUANICA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=bdb5a55b76f94d229e05b21d796a31f4:b2199a26517473a165bd6f5cce766a7f
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560808/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", LRT LLITUANICA HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6b0230595ede4b7a9cdbac1a2726511e:38f82196e7f51852a6d28d810aa38f07
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562007/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", LRT PLUS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b51fd51c1e8e49399506c45a8bf8f68a:56f34e36bc97ac3c7370cb928389f39a
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561905/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", LRT TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=731c0bff37db4482b621506b1c20e6e3:e114a77531fce9a93c2ee2a35f805319
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561401/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", LUXE TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=91099357149b48b5aa75a08745df13e8:e52de09331036061db66564da501b17b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560801/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", MARIJAMPOLES TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=e60bf65bcf3d4ac1808e5185408c76ff:f586a08b87ea2859e8e70bf69a61278f
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560206/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", MEZZO
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b6cde270be684ea6936c20fd7190f0dc:337d43d5b3581811f63cff2d56c61b75
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560611/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", MTV 00s
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ba29ad1cfb7c4a8b95cca44cf4641e78:b5db7930ad42ca8e7eff680ffba8a713
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560410/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", MTV HITS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=73be9dd0138241bcaced7d4fb3f5a4b1:eebcb531a9deb6ab2de1a342c058afb8
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560612/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", MTV LIVE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1041d72f861c4e60a87a4e828250ded6:c75b1640bc83ec0c653902a775e5bb1a
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560701/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NASTOJASHCHEJE VREMYA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1645465fee5242c6bb410f3eb4bfd50b:c9f65af19215a938dfb2553cb74dd6d9
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560306/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NATGEO WILD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ffa7c3ca6020428c919e13b817b7e31b:adf163c6c1729e6f77668d4e49f32352
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561201/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NATIONAL GEOGRAPHIC
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6d647aff767c453daa5fb54a44c783c6:2f971e6a1cc58e7085afc761a3f13162
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561901/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NICK JR
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=188dd156ec11415d901a5abfaa6ce47c:75320892227e1ecff0c6089cc45b8ba9
+https://v4-kun-v13-cdn-02.live.cdn.cgates.lt/live/dash/561207/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NICKELODEON
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=02e18ec34420451aa07507f2872d5f96:44106545f5119bee912d48221b7a6695
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560607/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", NICKTOONS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=3161c6c45076419fbbc333c277a22f65:18827aad7e2e79e526f529fd5027cb47
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/561208/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", no funciona
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d0b1d43a262348ba9b0412c563716155:6f8cd9277297ce44e1de5f43be53d55e
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561210/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", *******
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=dc6fd1942d9f48ef856aa54447de9bda:de992279c9c2bfed4a0cbe29e320749a
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560911/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", PRIME FIGHT
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=efaf4dfd93ad44be89d1c3cccd3391c9:6e42e2790b427988a2e966a30b1c82ab
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560307/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", PUKAS TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=4a5ec65ce8804e3f8a54b75be3cd8d73:6fac429e35c24815c57da8a6174821ef
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561403/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", PV+
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=52d70d36e5454d548ab31ee64b44b336:b80b141075910c397d63b24787ae7318
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560304/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", RAZ 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9104d80b65c24161bf79e434dc77d7b9:19881560165ed39cceea103e1f35a018
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561506/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", RTL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6d7e6fa6587e4c7a96e5a5f65bf61157:4022e70d9cfff1adf4277d3a64df9a5d
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560403/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", RTVI
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b825743015ae46be996a63f3129b6a7f:441c1ff275bb1e52b8914968eedc68d8
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561003/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SEIMAS TIESIOGIAI
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560407/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SETANTA SPORTS 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8ab2332442854e62b0018eec3ee58484:37fdee8b6eef5c96001e8c6fc47bfc08
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561002/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SETANTA SPORTS 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9552bcbabfbd4ac19744422143bfb875:e6daacaced7eba147d2b667441060a4f
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561504/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SMART ZONE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c4220594da864b709b371f02530a6269:497758b2ad848cc06be15f067c833e04
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562103/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SOL TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b5b2c07d535944cbbd2b069c774c6872:310bd3ebd45bb2202339c5923084fad8
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561603/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SPORT 1 BALTIK
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=032ba9e7db644873861490a3afc863d8:fd29ed4731ecafba696ac68cbe870008
+https://v4-kun-v13-cdn-02.live.cdn.cgates.lt/live/dash/561204/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SPORT 1 HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c991c368916e42b4863434de3e1761f6:de737ed43aa92c98d4c89e32aa2408ce
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560210/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", sport 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=5fd3f407ea7c465b854db7cd8235b39b:0c2ad3408bb09f698e86e1ca2e26a888
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561209/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SPORT 4
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/561202/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", STINGRAY iCONCERTS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fa806baddc384a168eff4f95f06ad289:eb65e4b92473ed6e33ff05a56343dbab
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561101/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SUPER +
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=daedb64f3dfd48cb8241a645588fb21c:df1324b6eefb898933d0a0e6acbf604f
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560605/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", SUPER BALTIC
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c353118856ac4d2ebfd37c3f54212853:c5ab02b272f1c8f29b957df386b2de3c
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561108/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TIJI
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=36c53e1fddb7450a8818bfdae5c57772:d1953766ece0bebdc1d0c9643fc51821
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561304/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TLC
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8692a36421b74b2fbc89da9581a30878:69768eabb65feda448401ee95c86fdd4
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560702/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TRAVEL CHANNEL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=2273a52098234332b1a12d0d9d82ad88:dd949a70fbf98aadf953e0f11f254a0c
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561008/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TRAVEL XP
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=508655b453d34897b1584e2a77101ca5:e315199be7c88a76f3dc70311521e08b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561107/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TV3
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=28e1ac1b5f704dc78fb0d6da9a6859ef:25e4849bbcd555a265afeae3f27a78a0
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562008/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TV5 MONDE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=53e1617553c04e0da4ccf40db7afc072:d3f68d81e04f4e4a2f8276055b0b9ad1
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560408/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TV6
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=3bc423e240f64c2e8d9fb5bd5d4fa55a:409a409eef02e248880f70d02cd8d9d4
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562101/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TV8
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=7523ba2dd6384332950d7bd512caae25:551b8e19dde30b786abe0d48d9fd9b12
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562105/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TVP INFO
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fdb231a06efe4765a535693f3e599a80:9c14980cd47d01ebda163b7eebaf569b
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560501/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", TVP POLONIA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=75192aa73eec45f7a9225b8a6d2e7ef2:00ab70e78138d40eed4fde27de7661e0
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560305/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", UKRAINE 24
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9343856ad0aa43dfa268e340ca7d7aac:eb351650fe1e4c33e1db10fe687ff82d
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560803/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", VIASAT KINO
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1c094cd281d448e099ab8b8f3a6d0c59:fdc2c0411e49540e2995ab915e3bc9f6
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560903/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", VIASAT KINO COMEDY
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fc75aa7946574c98ba16581c6fcb482c:0067607f24eed00bbf50155760f8c6b3
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561404/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", VIVID TOUCH (XXX)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=09ce357171554f428ba6a246505cb234:66ed93ee3397980d42ab9de40b98265d
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560912/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", ZINIU RADIJAS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=aa9a4274a195405b931bd1b409f221d2:1cfa3a38f4d0d2d785a494cd9f864b2b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560806/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", 1+1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ea8ccd787c774c0eacc72d39ae773eb3:22eca650f56be4cf65fbc4a106e91a5d
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560609/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", 1+2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=630353380bb3416382c95f81115ea557:ca8c805739f3c57a62858f1b4cf5796d
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561501/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", 4Y
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8869d3bcfe054098a3e44ce31cd7d239:a5be34df658d24aa61b2623d048d594a
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561001/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", 5 KANAL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9456d208aafa4082b631f9f667a365e1:0b589540c6bdb57c159e55b75f437516
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561405/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", AMC
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=34c1715a9fd24e7d8497da043669ad66:e3ce21758f33b38413d7cfecfddcb289
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560908/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", ANIMAL PLANET
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=999c783c19f6412fbd874ed21e17c9c2:494421f360d98a7fdda924130d662272
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/561803/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", ARIRANG
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ae5c368c99f14472be0ea61b37764443:1d82f925c73039a41cf67187d458b163
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560802/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BABY TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a7707f7fb0c84c8ba54619f514eee4ec:fd2ceae6cddde71895e4718f00f34275
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561306/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BALTICUM AUKSINIS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=584e05411b0846879cf33dec69afb389:70f480a8814189173a44fe26c969f5bb
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560508/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BALTICUM PLATINUM
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f1ccd87a3e2f4518aeae1b7052502301:6c96cc74231af507df9edbeefe39c7f4
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/562102/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BALTICUM TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=13bbfbac005f42ff98eab149871958f3:753c2e1e1060fc48c20936324b9d6f1a
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560107/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BARELY LEGAL TV (XXX)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8315b1996d92477b965cb29100a3dc07:0081c0674e9047e219caa27a07da9d4b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560910/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BBC EARTH
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fad3ff2ee51941319c4474b2b3c8279d:18eec8f28b5dfc2cd12904ade10690cd
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561804/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BBC WORLD NEWS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f9b363a19b584477ada65ea4e4bd9302:26e1e661f9e16376ff2621bf250ad103
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560405/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BLOOMBERG
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=0b64b1eca5464aaa9a74ede4b596fa11:67c1275b9f20d55b24ad3f43da32172b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560710/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", BLUE HUSTLER
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=54393232379c4a57898a8d4d12b6695c:2305a3f727638465116400f7c422af87
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560601/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", CARTOON NETWORK
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=5cebda34393a4b20b0748445ba89e8c4:2c125f88407aff752517ffc485436043
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560401/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", CARTOONITO
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f3edd459ec694178ace7085a1590e1f7:87a8578d064e701561e580929f425a53
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560608/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", CHEMODAN TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c6d35048320c41c2ab7aa1441e949b4c:7c9ffd28d1af404c7f94abd18203e6e7
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561507/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", CNN INTERNATIONAL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=2f4052e0dcb740b28b8fd49ee4ecd35a:e2e0d07b2767e46581c82cf87614e750
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560404/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DA VINCI LEARNING
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ee86cc9df1984d42ab7f4e4b5d4779c6:e7fff34cfa72c9be9de54d0d79d944f9
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561305/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DISCOVERY
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=0e5b4f0f0bf641029b2b2000665a8b49:152408adb88d19b5bfac04ccb6c493bb
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/562104/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DISNEY CHANNEL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8c97949301c74e7ea3a58d8db60772ad:f41812e07cf1683c5036f200feef11b6
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561302/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DISNEY JR
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a5c5fc47aeff493c88c8b89cf39e09bf:4932801ed58dca8d77fa6194731d3c95
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561307/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DIZI
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d4ca4284166c44eaa2ca30437f548ee5:ec189394aa46efedf760042f5ea166de
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561106/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DIZI (OPC.2)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=11b9f3df1db94409b2502212357faf1e:cd58ed0436f7ce091b006c272cc37e13
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561109/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DOCUBOX
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9baa6daa67be4fa8993da17d1c58180e:32e341d0510bbe4e9788573efdedf9f9
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561606/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DUO 3
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=40691795561a4cefb9b0d1f5cdee4cdf:0888cb7a04fa270b8a75caa5d70f7bcc
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561903/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DUO 5
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=184799e42f8848e78fd59a1e3b208d44:aa5008a50e483264a1cffd6d1431b88b
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561511/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DUO 6
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=12c5463a9aaa4b3e98e44d207efb9169:e10a8980d8f578469796a23862f329b1
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561904/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DW
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d0016796b2cc4f59b679fd92d67b4f2e:52725d05ea5cfb934a350fd200ef3ab6
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560301/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", DYNAMO KYIV TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ca05d07540f64e3b853319de2c12c812:5b32a435b4a4ee2d6844942bb862f980
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561211/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EPIC DRAMA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1e141d9362a146908b68789ae5426622:301c04cf7fc0efa2a25e3feb2cbedec0
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561006/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", error
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b6bd026b534846b18d018c1b65681423:6a42fc12490239df8d2c9e1486b5f8c8
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560409/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", ETAPLIUS TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fcb9209980504059a30bc185faa3abd0:9a3a0877d675d30c8653451545f04160
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560805/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EUROCHANNEL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=92759381324a4a029bfdd8735ad838be:44d1cb234f114db40a31ce7371a042d4
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560909/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EURONEWS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1ff2c0828ed444a38038a2dd0225afae:396a1402e760653a777bc7ac58cfa59e
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560506/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EURONEWS RU
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9e53cadbabd24009bb9d7a81efcffb49:a69265c8d36a7c5869dcfbdce1073248
+https://v4-kun-v13-cdn-02.live.cdn.cgates.lt/live/dash/560610/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EUROSPORT
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=01a665d487aa4c1c898c9eb0ff1a21df:a0b9df5f92e6b218ddb6aa40a2cd996d
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/561802/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EUROSPORT 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=657707bbd1e240e08bd6969df27fef7c:364e00581c1432f4175e4a2e8e0cd57e
+https://v4-kun-v13-cdn-02.live.cdn.cgates.lt/live/dash/561705/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", EXTREME SPORTS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fcda490bfd8148179b0e93c5ef0d80e3:e4293507d592df040f2186f1ce82a712
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561206/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FASTFUN BOX
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b6bd9264f24444c9a1bea842ba0bc33d:00c737b67ab210796510463a99b0b00d
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561203/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FIGHT SPORTS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a9e3bdb344af427b90e4681174e41c97:de6bcb2bef4f1c7968296c1cde182494
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561205/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FILMBOX
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=41fe0352977146788e20749a2188da13:a6ae98c3f0cb95e1131d2b509229b14d
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561007/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FILM ZONE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=5f652f0f588c48f1b3dd32c97be1f0de:e8aa2425c060c30d94170db71df08a5b
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560604/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FILM ZONE PLUS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=186ae0e717a74c288db38439e1ada450:6edc1009ee4d3892e8eb0ac980cdb0f4
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561308/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FILMBOX ARTHOUSE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a1b8bfc42f4b42a38f2ef3842a07063d:550e6e511958ef3da6213dd9b7450606
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560907/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FOOD NETWORK
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9fed171033124496802f06bb53c88efc:26f2046ce4698bd5354439f4b74ab5d0
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560704/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FRANCE 24 FR
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6594b4e2ea2e4bcc9fe668e636dc0637:eac78ae20e3e0a7c14f772204c26b6f2
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560406/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FREEDOM
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=e22f39105b8347c7965a4d341fb2983d:7e8e6ae472afe8554c252cdf775c08c5
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560302/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FX
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=35df612f2a58436d85806c585fcf56ce:9dfbd593c235de9843823be314b974cb
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561902/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", FX LIFE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1a75f9a2300f448089c6cdebeb97bbbd:606ae417e0e6cf4b0d353764e3140dbc
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561301/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GAMETOON
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=496c11d2d7a542a29d610448b8d6507b:480ef4382d576c87d7a1dd88f610aef3
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560503/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GO3 FILMS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a919cb6b2b6a498c9309128d9a673bf3:0816bd1e3b73e4822aa50ea08b974ff4
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561004/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GO3 SPORT 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f48a8131e05f4d6e84de19f086c781a6:fd28f2f966a906f4d4dcfd72ae90094e
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560502/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GO3 SPORT 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8b6061376de34956a3e9a9698f8a3d2e:f120de45500aacaa8fbdafec0234ce35
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560505/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GO3 SPORT OPEN
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a6b967afcb974bb5a549377b4f09befd:87d993257a099324ccd0215475fc61a0
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561402/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", GULLI GIRL
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=166ae23561ee4ecea81809ffd6bb0a0d:74d14f2d9c126afbd049d6a2fada3b90
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/561303/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", HISTORY
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=5ba0d6633816433d97a8fe52538327bd:f632b18c6394d11073bb77da2fd92ff1
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561702/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", INTER
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8315b1996d92477b965cb29100a3dc07:0081c0674e9047e219caa27a07da9d4b
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560101/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", INULTRA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a75116a23520434dacbe2e54da68dd6a:edd35aa34a3bfde8516b91342cb48bbe
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560709/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", INVESTIGATION DISCOVERY
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f500790fc198489bac7a5937cc5e2312:16ebfccee4852e9d63676106c11773bb
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561805/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", JIM JAM
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6d7d9d2aef84494e94830feebe8c0e3c:24bcf3046de823566d8c41b08f633df9
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561701/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", JP TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=91073d0be7db401fa8a80cf583b9d6e5:f3d94d59a439f343a199dff2610a1121
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560807/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KANAL 7
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=3a8e26cf92944350ae48eee58786e57e:5232df9aea9e8dd36725e11cfc1f42e6
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560209/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KID ZONE MAX
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=0d1ad3bcb7a3456ab481a3efc220fbbf:862dc6a316821e9f455af3535e128e48
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560706/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KID ZONE MINI
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a9e6f10b49524636bff3e1c26f696a8e:6571b2ecfed65c54dd59da621e9ca96d
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561703/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KINO 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ffa04fe20c324c828a6348bc62cf3ecd:f1f4e77913a749b462d99b2274c83b54
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561601/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KINO 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=38cd5e4b08974e7081ebd541ba665ea9:38b67f4784db45804a17d03831f1f442
+https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560603/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KINO 7
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6afb5e7ee26e47169f51527462341d89:68e070e9e4b63ad2a9be24d67f28e55c
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561508/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KINO ACTION
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a3d36e39d7a348b8baefe91d766502fd:c7dbd70b01503a82d081f373bfb872a3
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560902/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KINO WORLD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=95a09dab72584698946a0434e7746d40:dd472b5602dd0d34a5b931d2ab8d5d6b
+https://v4-pan-m3-cdn-02.live.cdn.cgates.lt/live/dash/560904/index.mpd
+
+#EXTINF:-1 tvg-logo="" group-title="Live", KVARTAL TV
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f6d72cedd5ed4bba8cd05ceb3abfa24e:8f5828dd155ae6f59399280722d58bc6
+https://v4-kun-nk16-cdn-01.live.cdn.cgates.lt/live/dash/561509/index.mpd
