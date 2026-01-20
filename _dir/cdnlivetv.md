@@ -144,7 +144,6 @@
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/south-africa/supersport-variety-1.webp" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/south-africa/supersport-variety-2.webp" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/south-africa/supersport-variety-3.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/south-africa/
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/canada/sportsnet-360.png" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/canada/sportsnet-east.png" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/canada/sportsnet-ontario.png" />
@@ -393,7 +392,6 @@
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/poland/polsat-sport-3.svg" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/poland/polsat-sport-premium-1.svg" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/poland/polsat-sport-premium-2.svg" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/poland/
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/poland/tvp-sport.svg" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/russia/match-football-1.svg" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/russia/match-football-2.svg" />
@@ -451,12 +449,12 @@
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/arena-sport-10.webp" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/max-sport-1.png" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/max-sport-2.png" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-hd.png" />.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-1.png" />.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-2.png" />.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-3.png" />.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-4.png" />.webp" />
-<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-golf.png" />.webp" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-hd.png" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-1.png" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-2.png" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-3.png" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-4.png" />
+<img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/croatia/sk-golf.png" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/belgium/canvas.svg" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/belgium/dazn-pro-league-1.png" />
 <img height="50" src="https://api.cdn-live.tv/api/v1/channels/images6318/belgium/dazn-pro-league-2.png" />
