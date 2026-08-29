@@ -71,7 +71,7 @@ https://mrdnkl.github.io/webapps/live/epl2/de-2playlist.m3u8?%7Cuser-agent%3DMoz
 #EXTINF:-1 group-title="EPL2" tvg-id="skySportsCalcio.it" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/70ud6o1656963115.png", SKY Sports Calcio
 https://mrdnkl.github.io/webapps/live/epl2/it-1playlist.m3u8?%7Cuser-agent%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20MI%209%20Build%2FQKQ1.190825.002%3B%20wv%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Version%2F4.0%20Chrome%2F111.0.5563.58%20Mobile%20Safari%2F537.36
 
-#EXTINF:-1 group-title="EPL2" tvg-id="skySportsUno.it" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/rvwrsy1458037943.png", SKY Sports Uno
+#EXTINF:-1 group-title="EPL2" tvg-id="skySportsUno.it" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/Sky_Sport_Uno.png", SKY Sports Uno
 https://mrdnkl.github.io/webapps/live/epl2/it-2playlist.m3u8?%7Cuser-agent%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20MI%209%20Build%2FQKQ1.190825.002%3B%20wv%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Version%2F4.0%20Chrome%2F111.0.5563.58%20Mobile%20Safari%2F537.36
 
 #EXTINF:-1 group-title="EPL2" tvg-id="hubPremiere.sg" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/qoerty1659622111.png", HUB Premier
