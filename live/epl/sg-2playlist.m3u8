@@ -1,5 +1,5 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,AVERAGE-BANDWIDTH=2200000,BANDWIDTH=3380000
-http://185.80.197.55:80/play/live.php?mac=00:1A:79:00:04:35&stream=1032528&extension=m3u8
+http://185.80.197.55:80/play/live.php?mac=00:1A:79:F5:8D:9F&stream=1032528&extension=m3u8
 <noscript>Hub Premiere2</noscript>
