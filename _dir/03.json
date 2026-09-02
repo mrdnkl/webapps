@@ -2,7 +2,7 @@
 "channel1": {
     "name": "Fancode 1",
     "logo":
-      "https://www.fancode.com/fc-web-legacy/1759488269119/build/mobile/client/images/logo@3x867f5c067d544a3f7956.svg",
+      "https://i.ibb.co/jvS7zkgW/images.png",
     "url":
       "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
     "keys": {
@@ -14,7 +14,7 @@
   "channel2": {
     "name": "Fancode 2",
     "logo":
-      "https://www.fancode.com/fc-web-legacy/1759488269119/build/mobile/client/images/logo@3x867f5c067d544a3f7956.svg",
+      "https://i.ibb.co/jvS7zkgW/images.png",
     "url":
       "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
     "keys": {
