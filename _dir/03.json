@@ -1,0 +1,43 @@
+{
+"channel1": {
+    "name": "Fancode 1",
+    "logo":
+      "https://www.fancode.com/fc-web-legacy/1759488269119/build/mobile/client/images/logo@3x867f5c067d544a3f7956.svg",
+    "url":
+      "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+    "keys": {
+      "clearKeys": {
+        "82dfca238e8c4b430a3269db71965db9": "a00b28caf4ac628e77a553d440c0ddca"
+      }
+    }
+  },
+  "channel2": {
+    "name": "Fancode 2",
+    "logo":
+      "https://www.fancode.com/fc-web-legacy/1759488269119/build/mobile/client/images/logo@3x867f5c067d544a3f7956.svg",
+    "url":
+      "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+    "keys": {
+      "clearKeys": {
+        "1994b1df7dfd2e8a8d7b9bf3fb900285": "22a1444b3da18e139191665b3d652835"
+      }
+    }
+  },
+  "channel3": {
+    "name": "Arena Sport",
+    "logo": "https://i.ibb.co.com/h2bcqhS/arenasp1sk.png",
+    "url": "https://dash3.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd",
+    "keys": {
+      "servers": {
+        "com.widevine.alpha": "https://drm.antik.sk/widevine/key"
+      }
+    }
+  },
+  "channel4": {
+    "name": "beinSports xtra",
+    "logo":
+      "https://static-us-east-2-fastly-a.www.philo.com/images/channel_logos/BEINX/large_white.png?auto=webp&auto=webp&ver=1&ver=1",
+    "url":
+      "https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8"
+  }
+}
