@@ -26,6 +26,8 @@
             --accent-blue: #3b82f6;
             --accent-purple: #8b5cf6;
             --accent-cyan: #06b6d4;
+            --accent-red: #dc2626;
+            --accent-green: #22c55e;
             --border-color: rgba(255, 255, 255, 0.1);
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -249,6 +251,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            flex-wrap: wrap;
         }
 
         .channel-group-badge {
@@ -279,13 +282,13 @@
         .drm-badge.widevine {
             background: rgba(220, 38, 38, 0.15);
             border-color: rgba(220, 38, 38, 0.3);
-            color: #dc2626;
+            color: var(--accent-red);
         }
 
         .drm-badge.clearkey {
             background: rgba(34, 197, 94, 0.15);
             border-color: rgba(34, 197, 94, 0.3);
-            color: #22c55e;
+            color: var(--accent-green);
         }
 
         .no-results {
@@ -502,6 +505,17 @@
             margin-bottom: 8px;
         }
 
+        .error-details {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            font-family: 'Courier New', monospace;
+            background: var(--bg-card);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-red);
+        }
+
         .retry-button {
             margin-top: 20px;
             padding: 12px 24px;
@@ -517,6 +531,42 @@
         .retry-button:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 500px;
+            border: 2px solid var(--border-color);
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
         }
     </style>
 </head>
@@ -568,9 +618,18 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="error-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="document.getElementById('error-modal').classList.remove('active')">&times;</span>
+            <h3 style="color: var(--accent-red); margin-bottom: 16px;">⚠️ Error Details</h3>
+            <div id="error-details-content"></div>
+        </div>
+    </div>
+
     <script>
         // ============================================
-        // IPTV PLAYER - WIDEVINE + CLEARKEY DRM FIX
+        // IPTV PLAYER - WIDEVINE + CLEARKEY DRM
+        // REFACTORED: Better error handling, Error 6007 fixes
         // ============================================
 
         const CONFIG = {
@@ -583,22 +642,30 @@
                     rebufferingGoal: 2,
                     bufferBehind: 20,
                     retryParameters: { 
-                        timeout: 15000, 
-                        maxAttempts: 4, 
-                        baseDelay: 500, 
-                        backoffFactor: 1.5 
+                        timeout: 20000,
+                        maxAttempts: 5,
+                        baseDelay: 500,
+                        backoffFactor: 1.5
                     },
-                    segmentRequestTimeout: 10000,
+                    segmentRequestTimeout: 15000,
                     segmentPrefetchLimit: 2
                 },
                 manifest: { 
                     retryParameters: { 
-                        timeout: 15000, 
-                        maxAttempts: 4 
+                        timeout: 20000,
+                        maxAttempts: 5
                     },
                     disableAudio: false,
                     disableVideo: false,
                     disableText: false
+                },
+                drm: {
+                    retryParameters: {
+                        timeout: 20000,
+                        maxAttempts: 3,
+                        baseDelay: 500,
+                        backoffFactor: 1.5
+                    }
                 }
             },
             UI_CONFIG: {
@@ -628,10 +695,13 @@
                     'played': 'rgba(63, 187, 1, 1)'
                 }
             },
-            DEFAULT_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            DEFAULT_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             DEFAULT_REFERER: "https://www.antik.sk/"
         };
 
+        // ============================================
+        // LOGGER SERVICE
+        // ============================================
         const Logger = {
             log: (msg, ...args) => console.log(`[IPTV] ${msg}`, ...args),
             warn: (msg, ...args) => console.warn(`[IPTV] ⚠️ ${msg}`, ...args),
@@ -640,6 +710,9 @@
             debug: (msg, ...args) => console.debug(`[IPTV] 🔍 ${msg}`, ...args)
         };
 
+        // ============================================
+        // UTILITY SERVICE
+        // ============================================
         const Utils = {
             debounce: (func, delay) => {
                 let timeoutId;
@@ -682,12 +755,14 @@
                     Logger.warn(`Failed to parse JSON: ${error.message}`);
                     return fallback;
                 }
-            }
+            },
+
+            sleep: (ms) => new Promise(resolve => setTimeout(resolve, ms))
         };
 
-        /**
-         * DRM Service - Fixed Widevine and ClearKey support
-         */
+        // ============================================
+        // DRM SERVICE - FIXED ERROR 6007
+        // ============================================
         const DRMService = {
             detectDRMType: (channel) => {
                 if (channel.widevineLicenseUrl) {
@@ -770,7 +845,9 @@
             },
 
             /**
-             * Widevine configuration - FIXED for Error 6012
+             * Widevine configuration - FIXED for Error 6007 & 6012
+             * Error 6007: License request failed
+             * Error 6012: DRM system error
              */
             _configureWidevine: (player, channel) => {
                 if (!channel.widevineLicenseUrl) {
@@ -780,18 +857,17 @@
                 Logger.debug('Configuring Widevine DRM');
 
                 try {
-                    // Configure DRM settings
+                    // Configure DRM settings with proper robustness
                     const config = {
                         drm: {
                             servers: {
                                 'com.widevine.alpha': channel.widevineLicenseUrl
                             },
-                            // CRITICAL: These settings prevent error 6012
                             advanced: {
                                 'com.widevine.alpha': {
                                     'videoRobustness': 'SW_SECURE_DECODE',
-                                    'audioRobustness': 'SW_SECURE_DECODE',
-                                    'serverCertificate': null
+                                    'audioRobustness': 'SW_SECURE_DECODE'
+                                    // Don't set serverCertificate - let it auto-detect
                                 }
                             }
                         }
@@ -800,29 +876,39 @@
                     player.configure(config);
                     Logger.debug(`License Server: ${channel.widevineLicenseUrl}`);
 
-                    // Register request filter for license requests
+                    // Register request filter for license requests (FIX for Error 6007)
                     player.getNetworkingEngine().registerRequestFilter((type, request) => {
                         if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+                            // CRITICAL: These headers are essential for license servers
                             request.headers['Content-Type'] = 'application/octet-stream';
                             request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
                             request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
                             request.method = 'POST';
 
+                            // Add custom headers from channel config
                             if (channel.licenseHeaders && typeof channel.licenseHeaders === 'object') {
                                 Object.entries(channel.licenseHeaders).forEach(([key, value]) => {
                                     request.headers[key] = value;
+                                    Logger.debug(`Added header: ${key}`);
                                 });
                             }
+
+                            Logger.debug('License request prepared');
                         }
                     });
 
-                    // Register response filter
+                    // Register response filter to validate license
                     player.getNetworkingEngine().registerResponseFilter((type, response) => {
                         if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
-                            Logger.debug(`LICENSE response: ${response.data.byteLength} bytes`);
+                            Logger.debug(`LICENSE response: ${response.data.byteLength} bytes, Status: ${response.status}`);
                             
+                            // Validate response (FIX for Error 6007)
                             if (!response.data || response.data.byteLength === 0) {
-                                throw new Error('Empty license response from server');
+                                throw new Error('Empty license response from server - may indicate server error or invalid license');
+                            }
+
+                            if (response.status && response.status >= 400) {
+                                throw new Error(`License server error: HTTP ${response.status}`);
                             }
                         }
                     });
@@ -835,7 +921,7 @@
             },
 
             /**
-             * ClearKey configuration - FIXED
+             * ClearKey configuration
              */
             _configureClearkey: (player, channel) => {
                 const clearKeyData = channel.clearkey || channel.licenseKey;
@@ -867,9 +953,9 @@
             }
         };
 
-        /**
-         * M3U Parser Service
-         */
+        // ============================================
+        // M3U PARSER SERVICE
+        // ============================================
         const M3UParser = {
             fetch: async (url) => {
                 if (!Utils.isValidUrl(url)) {
@@ -960,9 +1046,9 @@
             }
         };
 
-        /**
-         * UI Service
-         */
+        // ============================================
+        // UI SERVICE
+        // ============================================
         const UIService = {
             showLoading: () => {
                 const grid = Utils.getElement('channels-grid');
@@ -976,14 +1062,15 @@
                 }
             },
 
-            showError: (message = 'Could not fetch playlist') => {
+            showError: (message = 'Could not fetch playlist', errorCode = null) => {
                 const grid = Utils.getElement('channels-grid');
                 if (grid) {
+                    const errorMsg = errorCode ? `(Error ${errorCode})` : '';
                     grid.innerHTML = `
                         <div class="error-state">
                             <div class="error-icon">⚠️</div>
                             <h3>Failed to load channels</h3>
-                            <p>${message}</p>
+                            <p>${message} ${errorMsg}</p>
                             <button class="retry-button" onclick="IPTVApp.init()">Retry</button>
                         </div>
                     `;
@@ -1012,52 +1099,49 @@
                     return;
                 }
 
-                grid.innerHTML = channels
-                    .map((channel, index) => UIService._createChannelCard(channel, index))
-                    .join('');
-            },
+                grid.innerHTML = channels.map((channel, index) => {
+                    const drmType = DRMService.detectDRMType(channel);
+                    const drmBadge = drmType !== 'none' 
+                        ? `<span class="drm-badge ${drmType}">${drmType.toUpperCase()}</span>`
+                        : '';
 
-            _createChannelCard: (channel, index) => {
-                const drmType = DRMService.detectDRMType(channel);
-                const drmClass = drmType === 'widevine' ? 'widevine' : drmType === 'clearkey' ? 'clearkey' : '';
-                const drmBadge = drmType !== 'none' 
-                    ? `<div class="drm-badge ${drmClass}">🔐 ${drmType.toUpperCase()}</div>` 
-                    : '';
-
-                const logoHTML = channel.logo 
-                    ? `<img src="${channel.logo}" alt="${channel.name}" class="channel-logo" onerror="this.style.display='none'; this.nextElementSibling?.style.display='block';">
-                       <span class="channel-logo-placeholder material-icons-round" style="display: none;">tv</span>`
-                    : `<span class="channel-logo-placeholder material-icons-round">tv</span>`;
-
-                return `
-                    <div class="channel-card" data-channel-index="${index}" style="animation-delay: ${index * 0.05}s">
-                        <div class="channel-logo-wrapper">
-                            ${logoHTML}
+                    return `
+                        <div class="channel-card" data-channel-index="${index}">
+                            <div class="channel-logo-wrapper">
+                                ${channel.logo 
+                                    ? `<img src="${channel.logo}" alt="${channel.name}" class="channel-logo" onerror="this.style.display='none'">`
+                                    : `<span class="channel-logo-placeholder">📺</span>`
+                                }
+                            </div>
+                            <div class="channel-name">${channel.name}</div>
+                            <div class="channel-group">
+                                <span class="channel-group-badge">
+                                    <span class="material-icons-round" style="font-size: 0.875rem;">category</span>
+                                    ${channel.group}
+                                </span>
+                            </div>
+                            ${drmBadge}
                         </div>
-                        <div class="channel-name">${UIService._escapeHtml(channel.name)}</div>
-                        <div class="channel-group">
-                            <span class="channel-group-badge">
-                                <span class="material-icons-round" style="font-size: 0.875rem;">folder</span>
-                                ${UIService._escapeHtml(channel.group)}
-                            </span>
-                        </div>
-                        ${drmBadge}
-                    </div>
-                `;
-            },
+                    `;
+                }).join('');
 
-            _escapeHtml: (text) => {
-                const map = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'};
-                return text.replace(/[&<>"']/g, m => map[m]);
+                // Add event listeners
+                grid.querySelectorAll('.channel-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const index = parseInt(card.getAttribute('data-channel-index'), 10);
+                        if (!isNaN(index)) {
+                            IPTVApp.playChannel(index);
+                        }
+                    });
+                });
             },
 
             showPlayer: (channelName) => {
                 const playerContainer = Utils.getElement('player-container');
                 const playerTitle = Utils.getElement('player-title');
-                
                 if (playerContainer && playerTitle) {
+                    playerTitle.textContent = channelName;
                     playerContainer.classList.add('active');
-                    playerTitle.textContent = UIService._escapeHtml(channelName);
                 }
             },
 
@@ -1066,15 +1150,37 @@
                 if (playerContainer) {
                     playerContainer.classList.remove('active');
                 }
+            },
+
+            showErrorModal: (title, message, errorCode = null) => {
+                const modal = Utils.getElement('error-modal');
+                const content = Utils.getElement('error-details-content');
+                
+                if (modal && content) {
+                    const codeInfo = errorCode ? `<p><strong>Error Code:</strong> ${errorCode}</p>` : '';
+                    content.innerHTML = `
+                        <p><strong>Message:</strong> ${message}</p>
+                        ${codeInfo}
+                        <p style="margin-top: 12px; font-size: 0.875rem;">
+                            <strong>Troubleshooting:</strong><br>
+                            1. Check license server URL<br>
+                            2. Verify network connection<br>
+                            3. Check browser console for details<br>
+                            4. Try a different channel
+                        </p>
+                    `;
+                    modal.classList.add('active');
+                }
             }
         };
 
-        /**
-         * Player Service
-         */
+        // ============================================
+        // PLAYER SERVICE
+        // ============================================
         const PlayerService = {
             player: null,
             ui: null,
+            currentChannel: null,
 
             init: async (channel) => {
                 const video = Utils.getElement('video');
@@ -1090,7 +1196,7 @@
                     await PlayerService.destroy();
 
                     if (!shaka.Player.isBrowserSupported()) {
-                        throw new Error('Browser not supported');
+                        throw new Error('Browser not supported by Shaka Player');
                     }
 
                     PlayerService.player = new shaka.Player();
@@ -1100,13 +1206,15 @@
                     PlayerService.ui = new shaka.ui.Overlay(PlayerService.player, videoContainer, video);
                     PlayerService.ui.configure(CONFIG.UI_CONFIG);
 
-                    PlayerService.player.addEventListener('error', PlayerService._handleError);
-
                     // Configure streaming BEFORE DRM
                     PlayerService.player.configure(CONFIG.PLAYER_CONFIG);
 
+                    // Add error handler
+                    PlayerService.player.addEventListener('error', PlayerService._handleError);
+
                     // Configure DRM
                     DRMService.configureDRM(PlayerService.player, channel);
+                    PlayerService.currentChannel = channel;
 
                     Logger.log('Loading stream...');
                     await PlayerService.player.load(channel.streamUrl);
@@ -1118,17 +1226,34 @@
             },
 
             _handleError: (error) => {
-                const errorMsg = error.detail?.message || 'Unknown error';
-                const errorCode = error.detail?.code || 'N/A';
+                const errorDetail = error.detail;
+                const errorMsg = errorDetail?.message || 'Unknown error';
+                const errorCode = errorDetail?.code || 'N/A';
                 
                 Logger.error(`Player error (${errorCode}): ${errorMsg}`);
-                
-                // Specific error handling
-                if (errorCode === 6012) {
-                    Logger.error('DRM system error - License server may be unreachable or invalid');
-                }
-                
-                alert(`Error: ${errorMsg}`);
+
+                // Specific error handling for common DRM issues
+                const errorHandling = {
+                    6007: {
+                        title: 'License Request Failed (Error 6007)',
+                        message: 'Unable to fetch DRM license. This usually means:\n• License server is unreachable\n• Invalid license server URL\n• Server returned an error\n• Missing required headers'
+                    },
+                    6012: {
+                        title: 'DRM System Error (Error 6012)',
+                        message: 'DRM system error. Possible causes:\n• Browser DRM support missing\n• Invalid robustness settings\n• Incompatible video codec'
+                    },
+                    4010: {
+                        title: 'Manifest Loading Error (4010)',
+                        message: 'Failed to load stream manifest. Check URL validity.'
+                    }
+                };
+
+                const errorInfo = errorHandling[errorCode] || {
+                    title: `Playback Error (${errorCode})`,
+                    message: errorMsg
+                };
+
+                UIService.showErrorModal(errorInfo.title, errorInfo.message, errorCode);
             },
 
             destroy: async () => {
@@ -1141,34 +1266,43 @@
                         PlayerService.ui.destroy();
                         PlayerService.ui = null;
                     }
+                    PlayerService.currentChannel = null;
                     Logger.success('Player destroyed');
                 } catch (error) {
-                    Logger.error(`Destroy error: ${error.message}`);
+                    Logger.warn(`Player destroy error: ${error.message}`);
                 }
             }
         };
 
-        /**
-         * Main Application
-         */
+        // ============================================
+        // MAIN APP
+        // ============================================
         const IPTVApp = {
-            state: { allChannels: [], filteredChannels: [] },
+            state: {
+                allChannels: [],
+                filteredChannels: [],
+                searchQuery: ''
+            },
 
-            init: async () => {
-                Logger.log('Starting IPTV Player');
-                UIService.showLoading();
-
+            async init() {
                 try {
+                    UIService.showLoading();
+                    Logger.log('Initializing IPTV App');
+
+                    // Fetch and parse M3U
                     const m3uContent = await M3UParser.fetch(CONFIG.M3U_URL);
                     IPTVApp.state.allChannels = M3UParser.parse(m3uContent);
-                    IPTVApp.state.filteredChannels = [...IPTVApp.state.allChannels];
 
+                    if (IPTVApp.state.allChannels.length === 0) {
+                        throw new Error('No channels found in playlist');
+                    }
+
+                    IPTVApp.state.filteredChannels = IPTVApp.state.allChannels;
                     UIService.renderChannels(IPTVApp.state.filteredChannels);
                     IPTVApp._attachEventListeners();
-
-                    Logger.success(`Loaded ${IPTVApp.state.allChannels.length} channels`);
+                    Logger.success('App initialized successfully');
                 } catch (error) {
-                    Logger.error(`Init failed: ${error.message}`);
+                    Logger.error(`App init failed: ${error.message}`);
                     UIService.showError(error.message);
                 }
             },
@@ -1177,42 +1311,56 @@
                 const searchInput = Utils.getElement('search-input');
                 const searchButton = Utils.getElement('search-button');
                 const backButton = Utils.getElement('back-button');
-                const channelGrid = Utils.getElement('channels-grid');
 
-                if (searchInput) searchInput.addEventListener('input', IPTVApp._handleSearch);
-                if (searchButton) searchButton.addEventListener('click', () => searchInput?.focus());
-                if (backButton) backButton.addEventListener('click', IPTVApp.closePlayer);
-                if (channelGrid) channelGrid.addEventListener('click', IPTVApp._handleChannelClick);
+                if (searchInput) {
+                    const debouncedSearch = Utils.debounce(() => {
+                        IPTVApp.state.searchQuery = searchInput.value.toLowerCase();
+                        IPTVApp._filterChannels();
+                    }, CONFIG.SEARCH_DEBOUNCE_MS);
+
+                    searchInput.addEventListener('input', debouncedSearch);
+                    searchInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            IPTVApp.state.searchQuery = searchInput.value.toLowerCase();
+                            IPTVApp._filterChannels();
+                        }
+                    });
+                }
+
+                if (searchButton) {
+                    searchButton.addEventListener('click', () => {
+                        IPTVApp.state.searchQuery = searchInput.value.toLowerCase();
+                        IPTVApp._filterChannels();
+                    });
+                }
+
+                if (backButton) {
+                    backButton.addEventListener('click', () => {
+                        IPTVApp.closePlayer();
+                    });
+                }
             },
 
-            _handleSearch: Utils.debounce((e) => {
-                const query = e.target.value.toLowerCase().trim();
+            _filterChannels: () => {
+                const query = IPTVApp.state.searchQuery;
 
-                IPTVApp.state.filteredChannels = query === ''
-                    ? [...IPTVApp.state.allChannels]
-                    : IPTVApp.state.allChannels.filter(ch => 
-                        ch.name.toLowerCase().includes(query) ||
-                        ch.group.toLowerCase().includes(query)
-                      );
+                if (!query) {
+                    IPTVApp.state.filteredChannels = IPTVApp.state.allChannels;
+                } else {
+                    IPTVApp.state.filteredChannels = IPTVApp.state.allChannels.filter(channel =>
+                        channel.name.toLowerCase().includes(query) ||
+                        channel.group.toLowerCase().includes(query)
+                    );
+                }
 
                 UIService.renderChannels(IPTVApp.state.filteredChannels);
-            }, CONFIG.SEARCH_DEBOUNCE_MS),
-
-            _handleChannelClick: (e) => {
-                const card = e.target.closest('.channel-card');
-                if (!card) return;
-
-                const index = parseInt(card.getAttribute('data-channel-index'), 10);
-                if (!isNaN(index)) {
-                    IPTVApp.playChannel(index);
-                }
             },
 
             playChannel: async (index) => {
                 const channel = IPTVApp.state.filteredChannels[index];
 
                 if (!channel || !channel.streamUrl) {
-                    alert('Stream URL not available');
+                    UIService.showErrorModal('Invalid Channel', 'Stream URL not available for this channel');
                     return;
                 }
 
@@ -1223,7 +1371,7 @@
                     await PlayerService.init(channel);
                 } catch (error) {
                     UIService.hidePlayer();
-                    alert(`Failed: ${error.message}`);
+                    UIService.showErrorModal('Playback Failed', error.message);
                 }
             },
 
@@ -1233,14 +1381,21 @@
             }
         };
 
+        // ============================================
+        // INITIALIZATION
+        // ============================================
         window.addEventListener('DOMContentLoaded', () => {
+            if (!window.shaka) {
+                Logger.error('Shaka Player not loaded');
+                UIService.showError('Shaka Player library failed to load');
+                return;
+            }
+
             shaka.polyfill.installAll();
             IPTVApp.init();
         });
     </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/shaka-player/dist/shaka-player.ui.min.js" crossorigin="anonymous"></script>
 </body>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/shaka-player/dist/shaka-player.ui.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </html>
