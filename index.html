@@ -925,6 +925,7 @@
         /**
          * M3U Parser Service with DRM Support
          */
+/*        
         const M3UParser = {
             fetch: async (url) => {
                 if (!Utils.isValidUrl(url)) {
@@ -1074,6 +1075,181 @@
                 }
             }
         };
+        */
+
+
+        /**
+ * Updated M3U Parser Service with Comprehensive Widevine DRM Support
+ */
+const M3UParser = {
+    fetch: async (url) => {
+        if (!Utils.isValidUrl(url)) {
+            throw new Error(`Invalid M3U URL: ${url}`);
+        }
+
+        Logger.log(`Fetching M3U from: ${url}`);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            const text = await response.text();
+            Logger.log(`M3U fetched successfully. Size: ${text.length} bytes`);
+            return text;
+        } catch (error) {
+            Logger.error(`Failed to fetch M3U: ${error.message}`);
+            throw error;
+        }
+    },
+
+    parse: (m3uContent) => {
+        if (!m3uContent || typeof m3uContent !== 'string') {
+            Logger.error('Invalid M3U content provided');
+            return [];
+        }
+
+        const channels = [];
+        const lines = m3uContent
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line);
+
+        let currentChannel = {};
+        let licenseKey = '';
+        let clearkey = '';
+        let widevineLicenseUrl = '';
+        let licenseHeaders = {};
+        let cookie = '';
+        let drmTypeDetected = '';
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+
+            // 1. Parse EXTINF line (channel metadata)
+            if (line.startsWith('#EXTINF:')) {
+                currentChannel = M3UParser._parseExtinf(line);
+            }
+            // 2. Parse License Type (e.g., com.widevine.alpha)
+            else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_type=')) {
+                drmTypeDetected = line.replace('#KODIPROP:inputstream.adaptive.license_type=', '').trim();
+            }
+            // 3. Parse Widevine license URL from generic inputstream.adaptive or explicit widevine key tag
+            else if (
+                line.startsWith('#KODIPROP:inputstream.adaptive.license_key=') ||
+                line.startsWith('#KODIPROP:inputstream.widevine.license_key=')
+            ) {
+                const extractedKey = line
+                    .replace('#KODIPROP:inputstream.adaptive.license_key=', '')
+                    .replace('#KODIPROP:inputstream.widevine.license_key=', '')
+                    .trim();
+
+                // If license_type was defined as com.widevine.alpha, or if it's an HTTP URL, assign to Widevine
+                if (drmTypeDetected === 'com.widevine.alpha' || extractedKey.startsWith('http')) {
+                    widevineLicenseUrl = extractedKey;
+                } else {
+                    licenseKey = extractedKey; // Fallback for key:kid formats
+                }
+            }
+            // 4. Parse ClearKey license (JSON JWK or kid:key format)
+            else if (
+                line.startsWith('#KODIPROP:inputstream.clearkey.license_key=') || 
+                line.startsWith('#EXT-X-CLEARKEY=')
+            ) {
+                clearkey = line
+                    .replace('#KODIPROP:inputstream.clearkey.license_key=', '')
+                    .replace('#EXT-X-CLEARKEY=', '')
+                    .trim();
+            }
+            // 5. Parse custom license headers
+            else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_headers=')) {
+                const headerStr = line.replace('#KODIPROP:inputstream.adaptive.license_headers=', '');
+                licenseHeaders = Utils.parseJSON(headerStr, {});
+            }
+            // 6. Parse cookies
+            else if (line.startsWith('#EXTHTTP:')) {
+                const cookieMatch = line.match(/"cookie":"([^"]+)"/);
+                if (cookieMatch) {
+                    cookie = cookieMatch[1];
+                }
+            }
+            // 7. Parse stream URL & finalize channel object
+            else if (line.startsWith('http')) {
+                const channel = M3UParser._parseStreamUrl(
+                    line, 
+                    currentChannel, 
+                    licenseKey,
+                    clearkey,
+                    widevineLicenseUrl,
+                    licenseHeaders,
+                    cookie
+                );
+                if (channel) {
+                    channels.push(channel);
+                }
+                
+                // Reset state for the next entry
+                currentChannel = {};
+                licenseKey = '';
+                clearkey = '';
+                widevineLicenseUrl = '';
+                licenseHeaders = {};
+                cookie = '';
+                drmTypeDetected = '';
+            }
+        }
+
+        Logger.success(`Parsed ${channels.length} channels`);
+        return channels;
+    },
+
+    _parseExtinf: (line) => {
+        const nameMatch = line.match(/,(.+)$/);
+        const logoMatch = line.match(/tvg-logo="([^"]+)"/);
+        const groupMatch = line.match(/group-title="([^"]+)"/);
+        const idMatch = line.match(/tvg-id="([^"]+)"/);
+
+        return {
+            name: nameMatch ? nameMatch[1].trim() : 'Unknown Channel',
+            logo: logoMatch ? logoMatch[1] : '',
+            group: groupMatch ? groupMatch[1] : 'General',
+            id: idMatch ? idMatch[1] : `channel_${Date.now()}`
+        };
+    },
+
+    _parseStreamUrl: (streamUrl, currentChannel, licenseKey, clearkey, widevineLicenseUrl, licenseHeaders, cookie) => {
+        try {
+            const urlCookieMatch = streamUrl.match(/__hdnea__=([^&]+)/);
+            let finalCookie = cookie;
+            if (urlCookieMatch && !cookie) {
+                finalCookie = '__hdnea__=' + urlCookieMatch[1];
+            }
+
+            const urlParts = streamUrl.split('?');
+            let cleanUrl = urlParts[0];
+            
+            if (urlParts.length > 1) {
+                const params = urlParts[1].split('&');
+                const cleanParams = params.filter(p => !p.includes('xxx='));
+                if (cleanParams.length > 0) {
+                    cleanUrl += '?' + cleanParams.join('&');
+                }
+            }
+
+            return {
+                ...currentChannel,
+                streamUrl: cleanUrl,
+                cookie: finalCookie,
+                licenseKey: licenseKey,
+                clearkey: clearkey,
+                widevineLicenseUrl: widevineLicenseUrl,
+                licenseHeaders: licenseHeaders
+            };
+        } catch (error) {
+            Logger.warn(`Failed to parse stream URL: ${error.message}`);
+            return null;
+        }
+    }
+};
 
         /**
          * UI Service - Handles DOM manipulation
