@@ -1088,14 +1088,9 @@
         };
         */
 
-/**
- * DRM Service - Handles Widevine and ClearKey configuration for Shaka Player
- */
+/*
 const DRMService = {
-    /**
-     * Detect DRM type from channel data
-     * Returns: 'widevine' | 'clearkey' | 'none'
-     */
+    
     detectDRMType: (channel) => {
         if (channel.widevineLicenseUrl) {
             return 'widevine';
@@ -1108,9 +1103,7 @@ const DRMService = {
         return 'none';
     },
 
-    /**
-     * Parse ClearKey license (supports JWK or kid:key format)
-     */
+    
     parseClearKeyLicense: (licenseData) => {
         if (!licenseData) return null;
 
@@ -1160,9 +1153,7 @@ const DRMService = {
         return null;
     },
 
-    /**
-     * Get Widevine license server configuration formatted properly for Shaka Player
-     */
+    
     getWidevineLicenseConfig: (channel) => {
         if (!channel.widevineLicenseUrl) return null;
 
@@ -1179,8 +1170,105 @@ const DRMService = {
         return config;
     },
 
+    
+    configureDRM: (player, channel) => {
+        const drmType = DRMService.detectDRMType(channel);
+        
+        if (drmType === 'none') {
+            Logger.log('No DRM protection detected for this channel');
+            return;
+        }
+
+        Logger.log(`Configuring ${drmType.toUpperCase()} DRM`);
+
+        try {
+            if (drmType === 'widevine') {
+                DRMService._configureWidevine(player, channel);
+            } else if (drmType === 'clearkey') {
+                DRMService._configureClearkey(player, channel);
+            }
+        } catch (error) {
+            Logger.error(`Failed to configure ${drmType} DRM: ${error.message}`);
+            throw error;
+        }
+    },
+
+    
+    _configureWidevine: (player, channel) => {
+        const config = DRMService.getWidevineLicenseConfig(channel);
+        
+        if (!config) {
+            throw new Error('Widevine license URL not configured');
+        }
+
+        player.configure(config);
+        Logger.success('Widevine DRM configured');
+    },
+
+    
+    _configureClearkey: (player, channel) => {
+        const clearKeyData = channel.clearkey || channel.licenseKey;
+        
+        if (!clearKeyData) {
+            throw new Error('ClearKey data not available');
+        }
+
+        const parsedLicense = DRMService.parseClearKeyLicense(clearKeyData);
+        
+        if (!parsedLicense || !parsedLicense.keys) {
+            throw new Error('Invalid ClearKey license format');
+        }
+
+        const config = {
+            drm: {
+                clearKeys: parsedLicense.keys
+            }
+        };
+
+        player.configure(config);
+        Logger.success(`ClearKey DRM configured with ${Object.keys(parsedLicense.keys).length} key(s)`);
+    }
+};
+*/        
+
+  /**
+ * DRM Service - Configured specifically to resolve Shaka Error 6012
+ */
+const DRMService = {
     /**
-     * Configure DRM for Shaka player instance
+     * Detect DRM type from channel data
+     * Returns: 'widevine' | 'clearkey' | 'none'
+     */
+    detectDRMType: (channel) => {
+        if (channel.widevineLicenseUrl) {
+            return 'widevine';
+        }
+
+        if (channel.clearkey || channel.licenseKey) {
+            return 'clearkey';
+        }
+
+        return 'none';
+    },
+
+    /**
+     * Get Widevine configuration object structured for Shaka Player
+     */
+    getWidevineLicenseConfig: (channel) => {
+        if (!channel.widevineLicenseUrl) return null;
+
+        // Proper structure nesting 'servers' inside 'drm' to prevent Error 6012
+        return {
+            drm: {
+                servers: {
+                    'com.widevine.alpha': channel.widevineLicenseUrl
+                }
+            }
+        };
+    },
+
+    /**
+     * Configure DRM for Shaka Player instance
      */
     configureDRM: (player, channel) => {
         const drmType = DRMService.detectDRMType(channel);
@@ -1211,11 +1299,12 @@ const DRMService = {
         const config = DRMService.getWidevineLicenseConfig(channel);
         
         if (!config) {
-            throw new Error('Widevine license URL not configured');
+            throw new Error('Widevine license URL missing');
         }
 
+        // Apply configuration to player instance
         player.configure(config);
-        Logger.success('Widevine DRM configured');
+        Logger.success('Widevine DRM configured correctly');
     },
 
     /**
@@ -1234,16 +1323,50 @@ const DRMService = {
             throw new Error('Invalid ClearKey license format');
         }
 
-        const config = {
+        player.configure({
             drm: {
                 clearKeys: parsedLicense.keys
             }
-        };
+        });
+        Logger.success('ClearKey DRM configured');
+    },
 
-        player.configure(config);
-        Logger.success(`ClearKey DRM configured with ${Object.keys(parsedLicense.keys).length} key(s)`);
+    /**
+     * Helper to parse ClearKey formats
+     */
+    parseClearKeyLicense: (licenseData) => {
+        if (!licenseData) return null;
+
+        if (Utils.isJSON(licenseData)) {
+            try {
+                const jwk = Utils.parseJSON(licenseData);
+                if (jwk.keys && Array.isArray(jwk.keys) && jwk.keys.length > 0) {
+                    return {
+                        format: 'jwk',
+                        keys: jwk.keys.reduce((acc, key) => {
+                            acc[key.kid] = key.k;
+                            return acc;
+                        }, {})
+                    };
+                }
+            } catch (error) {
+                Logger.warn(`Failed to parse JWK: ${error.message}`);
+            }
+        }
+
+        if (typeof licenseData === 'string' && licenseData.includes(':')) {
+            const [kid, key] = licenseData.split(':');
+            if (kid && key) {
+                return {
+                    format: 'simple',
+                    keys: { [kid]: key }
+                };
+            }
+        }
+
+        return null;
     }
-};
+};      
         
         /**
  * Updated M3U Parser Service with Comprehensive Widevine DRM Support
