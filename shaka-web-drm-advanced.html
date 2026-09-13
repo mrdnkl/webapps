@@ -281,6 +281,12 @@
             margin-top: 8px;
         }
 
+        .drm-badge.widevine {
+            background: rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+            color: #dc2626;
+        }
+
         /* No Results */
         .no-results {
             text-align: center;
@@ -728,9 +734,6 @@
                 }
             },
 
-            /**
-             * Check if string is JSON
-             */
             isJSON: (str) => {
                 try {
                     JSON.parse(str);
@@ -740,9 +743,6 @@
                 }
             },
 
-            /**
-             * Safe JSON parse with fallback
-             */
             parseJSON: (str, fallback = null) => {
                 try {
                     return JSON.parse(str);
@@ -759,26 +759,19 @@
         const DRMService = {
             /**
              * Detect DRM type from channel data
-             * Returns: 'widevine' | 'clearkey' | 'none'
              */
             detectDRMType: (channel) => {
-                // Check for Widevine license URL
                 if (channel.widevineLicenseUrl) {
                     return 'widevine';
                 }
-
-                // Check for ClearKey JSON JWK or simple key:kid format
                 if (channel.clearkey || channel.licenseKey) {
                     return 'clearkey';
                 }
-
                 return 'none';
             },
 
             /**
-             * Parse ClearKey license (supports multiple formats)
-             * Format 1: {"keys":[{"k":"...", "kid":"..."}]} (JWK)
-             * Format 2: kid:key (simple colon-separated)
+             * Parse ClearKey license
              */
             parseClearKeyLicense: (licenseData) => {
                 if (!licenseData) return null;
@@ -830,32 +823,6 @@
             },
 
             /**
-             * Get Widevine license server configuration
-             */
-            getWidevineLicenseConfig: (channel) => {
-                if (!channel.widevineLicenseUrl) return null;
-
-                const config = {
-                    servers: {
-                        'com.widevine.alpha': channel.widevineLicenseUrl
-                    }
-                };
-
-                // Add custom headers if present
-                if (channel.licenseHeaders) {
-                    config.headers = channel.licenseHeaders;
-                }
-
-                // Add custom request body if present
-                if (channel.licenseRequestType) {
-                    config.requestType = channel.licenseRequestType;
-                }
-
-                Logger.debug('Widevine config:', config);
-                return config;
-            },
-
-            /**
              * Configure DRM for player
              */
             configureDRM: (player, channel) => {
@@ -881,17 +848,65 @@
             },
 
             /**
-             * Configure Widevine DRM
+             * Configure Widevine DRM with proper EME setup
              */
             _configureWidevine: (player, channel) => {
-                const config = DRMService.getWidevineLicenseConfig(channel);
-                
-                if (!config) {
-                    throw new Error('Widevine license URL not configured');
+                if (!channel.widevineLicenseUrl) {
+                    throw new Error('Widevine license server URL is required');
                 }
 
-                player.configure(config);
-                Logger.success('Widevine DRM configured');
+                Logger.debug('Setting up Widevine DRM...');
+
+                try {
+                    // Configure advanced DRM settings
+                    const config = {
+                        drm: {
+                            servers: {
+                                'com.widevine.alpha': channel.widevineLicenseUrl
+                            },
+                            // Widevine requires these for proper EME handling
+                            initDataTypes: ['cenc'],
+                            keySystemsOrder: ['com.widevine.alpha'],
+                            // Delay for license request (optional)
+                            licenseRequestTimeout: 30000,
+                            sessionLimitTimeMs: 60000
+                        },
+                        streaming: {
+                            // DRM-specific streaming settings
+                            retryParameters: {
+                                timeout: 30000,
+                                maxAttempts: 5,
+                                baseDelay: 1000,
+                                backoffFactor: 1.5
+                            }
+                        }
+                    };
+
+                    player.configure(config);
+
+                    // Setup license request handler for Widevine
+                    player.getNetworkingEngine().registerRequestFilter((type, request) => {
+                        // Add Widevine-specific headers
+                        if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+                            request.headers['Content-Type'] = 'application/octet-stream';
+                            request.method = 'POST';
+                            
+                            // Add custom headers if present
+                            if (channel.licenseHeaders && typeof channel.licenseHeaders === 'object') {
+                                Object.assign(request.headers, channel.licenseHeaders);
+                            }
+
+                            // Add User-Agent
+                            request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
+                        }
+                    });
+
+                    Logger.success('Widevine DRM configured successfully');
+                    Logger.debug(`License Server: ${channel.widevineLicenseUrl}`);
+                } catch (error) {
+                    Logger.error(`Widevine configuration failed: ${error.message}`);
+                    throw error;
+                }
             },
 
             /**
@@ -912,7 +927,8 @@
 
                 const config = {
                     drm: {
-                        clearKeys: parsedLicense.keys
+                        clearKeys: parsedLicense.keys,
+                        keySystemsOrder: ['org.w3.clearkey']
                     }
                 };
 
@@ -968,37 +984,30 @@
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i];
 
-                    // Parse EXTINF line (channel metadata)
                     if (line.startsWith('#EXTINF:')) {
                         currentChannel = M3UParser._parseExtinf(line);
                     }
-                    // Parse Widevine license URL
                     else if (line.startsWith('#KODIPROP:inputstream.widevine.license_key=')) {
                         widevineLicenseUrl = line.replace('#KODIPROP:inputstream.widevine.license_key=', '');
                     }
-                    // Parse ClearKey license (JSON JWK or kid:key format)
                     else if (line.startsWith('#KODIPROP:inputstream.clearkey.license_key=') || 
                              line.startsWith('#EXT-X-CLEARKEY=')) {
                         clearkey = line.replace('#KODIPROP:inputstream.clearkey.license_key=', '')
                                        .replace('#EXT-X-CLEARKEY=', '');
                     }
-                    // Parse old format license key (fallback)
                     else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
                         licenseKey = line.replace('#KODIPROP:inputstream.adaptive.license_key=', '');
                     }
-                    // Parse custom license headers
                     else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_headers=')) {
                         const headerStr = line.replace('#KODIPROP:inputstream.adaptive.license_headers=', '');
                         licenseHeaders = Utils.parseJSON(headerStr, {});
                     }
-                    // Parse cookies
                     else if (line.startsWith('#EXTHTTP:')) {
                         const cookieMatch = line.match(/"cookie":"([^"]+)"/);
                         if (cookieMatch) {
                             cookie = cookieMatch[1];
                         }
                     }
-                    // Parse stream URL
                     else if (line.startsWith('http')) {
                         const channel = M3UParser._parseStreamUrl(
                             line, 
@@ -1012,7 +1021,6 @@
                         if (channel) {
                             channels.push(channel);
                         }
-                        // Reset for next channel
                         currentChannel = {};
                         licenseKey = '';
                         clearkey = '';
@@ -1063,10 +1071,10 @@
                         ...currentChannel,
                         streamUrl: cleanUrl,
                         cookie: finalCookie,
-                        licenseKey: licenseKey,                    // Fallback for simple kid:key
-                        clearkey: clearkey,                        // JSON JWK or kid:key
-                        widevineLicenseUrl: widevineLicenseUrl,    // Widevine license server
-                        licenseHeaders: licenseHeaders             // Custom license headers
+                        licenseKey: licenseKey,
+                        clearkey: clearkey,
+                        widevineLicenseUrl: widevineLicenseUrl,
+                        licenseHeaders: licenseHeaders
                     };
                 } catch (error) {
                     Logger.warn(`Failed to parse stream URL: ${error.message}`);
@@ -1134,8 +1142,9 @@
 
             _createChannelCard: (channel, index) => {
                 const drmType = DRMService.detectDRMType(channel);
+                const drmClass = drmType === 'widevine' ? 'widevine' : '';
                 const drmBadge = drmType !== 'none' 
-                    ? `<div class="drm-badge">🔐 ${drmType.toUpperCase()}</div>` 
+                    ? `<div class="drm-badge ${drmClass}">🔐 ${drmType.toUpperCase()}</div>` 
                     : '';
 
                 const logoHTML = channel.logo 
@@ -1229,9 +1238,10 @@
                     PlayerService.player.configure(CONFIG.PLAYER_CONFIG);
                     Logger.success('Player configuration set');
 
-                    // Configure DRM BEFORE networking
+                    // Configure DRM BEFORE loading manifest
                     DRMService.configureDRM(PlayerService.player, channel);
 
+                    // Configure networking
                     PlayerService._configureNetworking(channel);
 
                     Logger.log('Loading stream...');
@@ -1262,7 +1272,6 @@
                     request.headers['Cookie'] = channel.cookie;
                 }
 
-                // Add custom license headers if present
                 if (channel.licenseHeaders && Object.keys(channel.licenseHeaders).length > 0) {
                     Object.assign(request.headers, channel.licenseHeaders);
                 }
@@ -1417,12 +1426,15 @@
                 Logger.log(`DRM Type: ${drmType.toUpperCase()}`);
                 
                 if (drmType === 'widevine') {
-                    Logger.log(`Widevine License URL: ${channel.widevineLicenseUrl}`);
+                    Logger.log(`🔐 Widevine License Server: ${channel.widevineLicenseUrl}`);
+                    if (channel.licenseHeaders && Object.keys(channel.licenseHeaders).length > 0) {
+                        Logger.debug('Custom Headers:', channel.licenseHeaders);
+                    }
                 } else if (drmType === 'clearkey') {
-                    Logger.log(`ClearKey License: ${channel.clearkey || channel.licenseKey}`);
+                    Logger.log(`🔑 ClearKey License: ${channel.clearkey || channel.licenseKey}`);
                     const parsed = DRMService.parseClearKeyLicense(channel.clearkey || channel.licenseKey);
                     if (parsed) {
-                        Logger.log(`ClearKey Format: ${parsed.format}`);
+                        Logger.log(`Format: ${parsed.format}`);
                         Logger.debug(`Parsed KIDs:`, Object.keys(parsed.keys));
                     }
                 }
