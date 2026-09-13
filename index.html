@@ -1708,7 +1708,7 @@ const M3UParser = {
                     throw error;
                 }
             },
-
+/*
             _configureNetworking: (channel) => {
                 if (!PlayerService.player) return;
 
@@ -1719,6 +1719,42 @@ const M3UParser = {
 
                 Logger.success('Request filter registered');
             },
+*/            
+
+            _configureNetworking: (channel) => {
+    if (!PlayerService.player) return;
+
+    const netEngine = PlayerService.player.getNetworkingEngine();
+
+    // Request Interceptor: Attach headers & cookies
+    netEngine.registerRequestFilter((type, request) => {
+        PlayerService._setHeaders(request, channel);
+        PlayerService._appendCookieToUrl(request, type, channel);
+
+        // Ensure Widevine license requests pass binary payload headers
+        if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+            request.headers['Content-Type'] = 'application/octet-stream';
+        }
+    });
+
+    // Response Interceptor: Inspect DRM server response
+    netEngine.registerResponseFilter((type, response) => {
+        if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+            Logger.debug('License HTTP status code:', response.status);
+
+            // Decode payload to check for JSON or HTML error messages
+            const responseText = new TextDecoder().decode(response.data);
+            
+            if (response.status !== 200) {
+                Logger.error(`License request failed (${response.status}):`, responseText);
+            } else if (Utils.isJSON(responseText)) {
+                Logger.warn('License server returned JSON instead of raw binary key data:', responseText);
+            }
+        }
+    });
+
+    Logger.success('Network request and response filters registered');
+}
 
             _setHeaders: (request, channel) => {
                 request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
