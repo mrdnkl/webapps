@@ -43,7 +43,6 @@
             position: relative;
         }
 
-        /* Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -67,7 +66,6 @@
             75% { transform: translate(-5%, 5%) rotate(270deg); }
         }
 
-        /* Container */
         .container {
             position: relative;
             z-index: 1;
@@ -76,7 +74,6 @@
             padding: 24px;
         }
 
-        /* Header */
         .header {
             margin-bottom: 32px;
             animation: fadeInDown 0.6s ease;
@@ -98,7 +95,6 @@
             font-size: 1rem;
         }
 
-        /* Search Bar */
         .search-container {
             position: relative;
             margin-bottom: 32px;
@@ -161,7 +157,6 @@
             transform: translateY(-50%) scale(0.98);
         }
 
-        /* Channel Grid */
         .channels-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -287,7 +282,6 @@
             color: #dc2626;
         }
 
-        /* No Results */
         .no-results {
             text-align: center;
             padding: 80px 20px;
@@ -307,7 +301,6 @@
             margin-bottom: 8px;
         }
 
-        /* Video Player */
         .player-container {
             display: none;
             position: fixed;
@@ -391,34 +384,6 @@
             display: none !important;
         }
         
-        video::-webkit-media-controls-play-button {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-timeline {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-current-time-display {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-time-remaining-display {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-mute-button {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-volume-slider {
-            display: none !important;
-        }
-        
-        video::-webkit-media-controls-fullscreen-button {
-            display: none !important;
-        }
-        
         video::-moz-media-controls {
             display: none !important;
         }
@@ -427,20 +392,6 @@
             pointer-events: auto;
         }
 
-        .shaka-current-time {
-            display: none !important;
-        }
-        
-        .shaka-time-and-duration {
-            display: none !important;
-        }
-        
-        .shaka-ad-position,
-        .shaka-ad-counter {
-            display: none !important;
-        }
-
-        /* Loading State */
         .loading {
             text-align: center;
             padding: 80px 20px;
@@ -461,14 +412,9 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Animations */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes fadeInDown {
@@ -493,7 +439,6 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 16px;
@@ -520,12 +465,6 @@
                 font-size: 1rem;
             }
             
-            #video {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-            }
-            
             video {
                 object-fit: contain;
             }
@@ -538,7 +477,6 @@
             }
         }
 
-        /* Error State */
         .error-state {
             text-align: center;
             padding: 80px 20px;
@@ -577,15 +515,12 @@
     </style>
 </head>
 <body>
-    <!-- Main Container -->
     <div class="container" id="main-container">
-        <!-- Header -->
         <div class="header">
             <h1>LIVE TV</h1>
             <p>Browse and watch your favorite channels</p>
         </div>
 
-        <!-- Search Bar -->
         <div class="search-container">
             <div class="search-wrapper">
                 <input 
@@ -601,7 +536,6 @@
             </div>
         </div>
 
-        <!-- Channels Grid -->
         <div class="channels-grid" id="channels-grid">
             <div class="loading">
                 <div class="loading-spinner"></div>
@@ -610,7 +544,6 @@
         </div>
     </div>
 
-    <!-- Video Player -->
     <div class="player-container" id="player-container">
         <div class="player-header">
             <button class="back-button" id="back-button">
@@ -631,12 +564,9 @@
 
     <script>
         // ============================================
-        // IPTV PLAYER - ADVANCED DRM SUPPORT
+        // IPTV PLAYER - WIDEVINE DRM FIX
         // ============================================
 
-        /**
-         * Configuration Constants
-         */
         const CONFIG = {
             M3U_URL: "https://raw.githubusercontent.com/mrdnkl/webapps/refs/heads/main/_dir/playlist-dummy.m3u",
             SEARCH_DEBOUNCE_MS: 300,
@@ -690,13 +620,10 @@
                     'played': 'rgba(63, 187, 1, 1)'
                 }
             },
-            DEFAULT_USER_AGENT: "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6",
-            DEFAULT_REFERER: "https://www.jiotv.com/"
+            DEFAULT_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            DEFAULT_REFERER: "https://www.antik.sk/"
         };
 
-        /**
-         * Logger Utility
-         */
         const Logger = {
             log: (msg, ...args) => console.log(`[IPTV] ${msg}`, ...args),
             warn: (msg, ...args) => console.warn(`[IPTV] ⚠️ ${msg}`, ...args),
@@ -705,9 +632,6 @@
             debug: (msg, ...args) => console.debug(`[IPTV] 🔍 ${msg}`, ...args)
         };
 
-        /**
-         * Utility Functions
-         */
         const Utils = {
             debounce: (func, delay) => {
                 let timeoutId;
@@ -750,16 +674,37 @@
                     Logger.warn(`Failed to parse JSON: ${error.message}`);
                     return fallback;
                 }
+            },
+
+            /**
+             * Convert ArrayBuffer to Base64 string
+             */
+            arrayBufferToBase64: (buffer) => {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                for (let i = 0; i < bytes.byteLength; i++) {
+                    binary += String.fromCharCode(bytes[i]);
+                }
+                return btoa(binary);
+            },
+
+            /**
+             * Convert Base64 string to ArrayBuffer
+             */
+            base64ToArrayBuffer: (base64) => {
+                const binaryString = atob(base64);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                return bytes.buffer;
             }
         };
 
         /**
-         * DRM Service - Handles all DRM types
+         * DRM Service - Handles Widevine and ClearKey
          */
         const DRMService = {
-            /**
-             * Detect DRM type from channel data
-             */
             detectDRMType: (channel) => {
                 if (channel.widevineLicenseUrl) {
                     return 'widevine';
@@ -770,15 +715,11 @@
                 return 'none';
             },
 
-            /**
-             * Parse ClearKey license
-             */
             parseClearKeyLicense: (licenseData) => {
                 if (!licenseData) return null;
 
                 Logger.debug('Parsing ClearKey license');
 
-                // Format 1: JSON JWK format
                 if (Utils.isJSON(licenseData)) {
                     try {
                         const jwk = Utils.parseJSON(licenseData);
@@ -802,7 +743,6 @@
                     }
                 }
 
-                // Format 2: Simple kid:key format
                 if (typeof licenseData === 'string' && licenseData.includes(':')) {
                     try {
                         const [kid, key] = licenseData.split(':');
@@ -822,9 +762,6 @@
                 return null;
             },
 
-            /**
-             * Configure DRM for player
-             */
             configureDRM: (player, channel) => {
                 const drmType = DRMService.detectDRMType(channel);
                 
@@ -848,7 +785,8 @@
             },
 
             /**
-             * Configure Widevine DRM with proper EME setup
+             * Configure Widevine DRM with proper license challenge/response
+             * Format: #KODIPROP:inputstream.adaptive.license_key=https://drm.server.com/license
              */
             _configureWidevine: (player, channel) => {
                 if (!channel.widevineLicenseUrl) {
@@ -858,51 +796,60 @@
                 Logger.debug('Setting up Widevine DRM...');
 
                 try {
-                    // Configure advanced DRM settings
+                    // Configure DRM with license server
                     const config = {
                         drm: {
                             servers: {
                                 'com.widevine.alpha': channel.widevineLicenseUrl
-                            },
-                            // Widevine requires these for proper EME handling
-                            initDataTypes: ['cenc'],
-                            keySystemsOrder: ['com.widevine.alpha'],
-                            // Delay for license request (optional)
-                            licenseRequestTimeout: 30000,
-                            sessionLimitTimeMs: 60000
-                        },
-                        streaming: {
-                            // DRM-specific streaming settings
-                            retryParameters: {
-                                timeout: 30000,
-                                maxAttempts: 5,
-                                baseDelay: 1000,
-                                backoffFactor: 1.5
                             }
                         }
                     };
 
                     player.configure(config);
+                    Logger.debug(`Widevine License Server: ${channel.widevineLicenseUrl}`);
 
-                    // Setup license request handler for Widevine
+                    // Register advanced request filter for LICENSE requests
                     player.getNetworkingEngine().registerRequestFilter((type, request) => {
-                        // Add Widevine-specific headers
+                        // Only modify LICENSE requests (Widevine license challenge/response)
                         if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+                            Logger.debug('Processing Widevine LICENSE request');
+
+                            // Set proper headers for license request
                             request.headers['Content-Type'] = 'application/octet-stream';
-                            request.method = 'POST';
+                            request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
                             
-                            // Add custom headers if present
-                            if (channel.licenseHeaders && typeof channel.licenseHeaders === 'object') {
-                                Object.assign(request.headers, channel.licenseHeaders);
+                            // Some DRM servers need Referer
+                            if (!request.headers['Referer']) {
+                                request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
                             }
 
-                            // Add User-Agent
-                            request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
+                            // Add custom license headers if provided
+                            if (channel.licenseHeaders && typeof channel.licenseHeaders === 'object') {
+                                Object.entries(channel.licenseHeaders).forEach(([key, value]) => {
+                                    request.headers[key] = value;
+                                    Logger.debug(`Added header: ${key}`);
+                                });
+                            }
+
+                            request.method = 'POST';
+
+                            Logger.debug('LICENSE request headers configured');
+                        }
+                    });
+
+                    // Register response filter to handle license responses
+                    player.getNetworkingEngine().registerResponseFilter((type, response) => {
+                        if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
+                            Logger.debug(`Received LICENSE response: ${response.data.byteLength} bytes`);
+                            
+                            // Verify response is not empty
+                            if (!response.data || response.data.byteLength === 0) {
+                                throw new Error('Empty license response from server');
+                            }
                         }
                     });
 
                     Logger.success('Widevine DRM configured successfully');
-                    Logger.debug(`License Server: ${channel.widevineLicenseUrl}`);
                 } catch (error) {
                     Logger.error(`Widevine configuration failed: ${error.message}`);
                     throw error;
@@ -939,7 +886,7 @@
         };
 
         /**
-         * M3U Parser Service with DRM Support
+         * M3U Parser Service
          */
         const M3UParser = {
             fetch: async (url) => {
@@ -978,6 +925,8 @@
                 let licenseKey = '';
                 let clearkey = '';
                 let widevineLicenseUrl = '';
+                let manifestType = '';
+                let licenseType = '';
                 let licenseHeaders = {};
                 let cookie = '';
 
@@ -987,16 +936,23 @@
                     if (line.startsWith('#EXTINF:')) {
                         currentChannel = M3UParser._parseExtinf(line);
                     }
-                    else if (line.startsWith('#KODIPROP:inputstream.widevine.license_key=')) {
-                        widevineLicenseUrl = line.replace('#KODIPROP:inputstream.widevine.license_key=', '');
+                    // Parse: #KODIPROP:inputstream.adaptive.license_key=https://drm.server/license
+                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
+                        widevineLicenseUrl = line.replace('#KODIPROP:inputstream.adaptive.license_key=', '');
                     }
+                    // Parse: #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_type=')) {
+                        licenseType = line.replace('#KODIPROP:inputstream.adaptive.license_type=', '');
+                    }
+                    // Parse: #KODIPROP:inputstream.adaptive.manifest_type=dash
+                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.manifest_type=')) {
+                        manifestType = line.replace('#KODIPROP:inputstream.adaptive.manifest_type=', '');
+                    }
+                    // Old format support
                     else if (line.startsWith('#KODIPROP:inputstream.clearkey.license_key=') || 
                              line.startsWith('#EXT-X-CLEARKEY=')) {
                         clearkey = line.replace('#KODIPROP:inputstream.clearkey.license_key=', '')
                                        .replace('#EXT-X-CLEARKEY=', '');
-                    }
-                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
-                        licenseKey = line.replace('#KODIPROP:inputstream.adaptive.license_key=', '');
                     }
                     else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_headers=')) {
                         const headerStr = line.replace('#KODIPROP:inputstream.adaptive.license_headers=', '');
@@ -1015,6 +971,8 @@
                             licenseKey,
                             clearkey,
                             widevineLicenseUrl,
+                            licenseType,
+                            manifestType,
                             licenseHeaders,
                             cookie
                         );
@@ -1025,6 +983,8 @@
                         licenseKey = '';
                         clearkey = '';
                         widevineLicenseUrl = '';
+                        licenseType = '';
+                        manifestType = '';
                         licenseHeaders = {};
                         cookie = '';
                     }
@@ -1048,7 +1008,7 @@
                 };
             },
 
-            _parseStreamUrl: (streamUrl, currentChannel, licenseKey, clearkey, widevineLicenseUrl, licenseHeaders, cookie) => {
+            _parseStreamUrl: (streamUrl, currentChannel, licenseKey, clearkey, widevineLicenseUrl, licenseType, manifestType, licenseHeaders, cookie) => {
                 try {
                     const urlCookieMatch = streamUrl.match(/__hdnea__=([^&]+)/);
                     let finalCookie = cookie;
@@ -1074,6 +1034,8 @@
                         licenseKey: licenseKey,
                         clearkey: clearkey,
                         widevineLicenseUrl: widevineLicenseUrl,
+                        licenseType: licenseType,
+                        manifestType: manifestType,
                         licenseHeaders: licenseHeaders
                     };
                 } catch (error) {
@@ -1084,7 +1046,7 @@
         };
 
         /**
-         * UI Service - Handles DOM manipulation
+         * UI Service
          */
         const UIService = {
             showLoading: () => {
@@ -1199,7 +1161,7 @@
         };
 
         /**
-         * Player Service - Manages Shaka Player lifecycle
+         * Player Service
          */
         const PlayerService = {
             player: null,
@@ -1234,6 +1196,9 @@
                     Logger.success('UI configured');
 
                     PlayerService.player.addEventListener('error', PlayerService._handleError);
+                    PlayerService.player.addEventListener('abrstatuschanged', () => {
+                        Logger.debug('ABR status changed');
+                    });
 
                     PlayerService.player.configure(CONFIG.PLAYER_CONFIG);
                     Logger.success('Player configuration set');
@@ -1241,52 +1206,12 @@
                     // Configure DRM BEFORE loading manifest
                     DRMService.configureDRM(PlayerService.player, channel);
 
-                    // Configure networking
-                    PlayerService._configureNetworking(channel);
-
                     Logger.log('Loading stream...');
                     await PlayerService.player.load(channel.streamUrl);
                     Logger.success('Stream loaded successfully!');
                 } catch (error) {
                     Logger.error(`Player initialization failed: ${error.message}`);
                     throw error;
-                }
-            },
-
-            _configureNetworking: (channel) => {
-                if (!PlayerService.player) return;
-
-                PlayerService.player.getNetworkingEngine().registerRequestFilter((type, request) => {
-                    PlayerService._setHeaders(request, channel);
-                    PlayerService._appendCookieToUrl(request, type, channel);
-                });
-
-                Logger.success('Request filter registered');
-            },
-
-            _setHeaders: (request, channel) => {
-                request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
-                request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
-                
-                if (channel.cookie) {
-                    request.headers['Cookie'] = channel.cookie;
-                }
-
-                if (channel.licenseHeaders && Object.keys(channel.licenseHeaders).length > 0) {
-                    Object.assign(request.headers, channel.licenseHeaders);
-                }
-            },
-
-            _appendCookieToUrl: (request, type, channel) => {
-                if (!channel.cookie || !request.uris[0]) return;
-
-                const isRelevantType = 
-                    type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
-                    type === shaka.net.NetworkingEngine.RequestType.SEGMENT;
-
-                if (isRelevantType && !request.uris[0].includes('__hdnea__=')) {
-                    const separator = request.uris[0].includes('?') ? '&' : '?';
-                    request.uris[0] += separator + channel.cookie;
                 }
             },
 
@@ -1316,7 +1241,7 @@
         };
 
         /**
-         * Main Application Module
+         * Main Application
          */
         const IPTVApp = {
             state: {
@@ -1427,16 +1352,17 @@
                 
                 if (drmType === 'widevine') {
                     Logger.log(`🔐 Widevine License Server: ${channel.widevineLicenseUrl}`);
+                    if (channel.licenseType) {
+                        Logger.log(`License Type: ${channel.licenseType}`);
+                    }
+                    if (channel.manifestType) {
+                        Logger.log(`Manifest Type: ${channel.manifestType}`);
+                    }
                     if (channel.licenseHeaders && Object.keys(channel.licenseHeaders).length > 0) {
                         Logger.debug('Custom Headers:', channel.licenseHeaders);
                     }
                 } else if (drmType === 'clearkey') {
                     Logger.log(`🔑 ClearKey License: ${channel.clearkey || channel.licenseKey}`);
-                    const parsed = DRMService.parseClearKeyLicense(channel.clearkey || channel.licenseKey);
-                    if (parsed) {
-                        Logger.log(`Format: ${parsed.format}`);
-                        Logger.debug(`Parsed KIDs:`, Object.keys(parsed.keys));
-                    }
                 }
                 
                 Logger.log(`Cookie: ${channel.cookie ? 'Present ✓' : 'Not present ✗'}`);
@@ -1452,7 +1378,7 @@
         };
 
         /**
-         * Initialize app on DOM ready
+         * Initialize
          */
         window.addEventListener('DOMContentLoaded', () => {
             shaka.polyfill.installAll();
