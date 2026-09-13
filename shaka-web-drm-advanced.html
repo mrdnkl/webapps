@@ -282,6 +282,12 @@
             color: #dc2626;
         }
 
+        .drm-badge.clearkey {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+
         .no-results {
             text-align: center;
             padding: 80px 20px;
@@ -564,7 +570,7 @@
 
     <script>
         // ============================================
-        // IPTV PLAYER - WIDEVINE DRM FIX
+        // IPTV PLAYER - WIDEVINE + CLEARKEY DRM FIX
         // ============================================
 
         const CONFIG = {
@@ -572,25 +578,27 @@
             SEARCH_DEBOUNCE_MS: 300,
             PLAYER_CONFIG: {
                 streaming: {
-                    lowLatencyMode: true,
-                    bufferingGoal: 15,
+                    lowLatencyMode: false,
+                    bufferingGoal: 8,
                     rebufferingGoal: 2,
-                    bufferBehind: 15,
+                    bufferBehind: 20,
                     retryParameters: { 
-                        timeout: 10000, 
-                        maxAttempts: 5, 
-                        baseDelay: 300, 
-                        backoffFactor: 1.2 
+                        timeout: 15000, 
+                        maxAttempts: 4, 
+                        baseDelay: 500, 
+                        backoffFactor: 1.5 
                     },
-                    segmentRequestTimeout: 8000,
-                    segmentPrefetchLimit: 2,
-                    useNativeHlsOnSafari: true
+                    segmentRequestTimeout: 10000,
+                    segmentPrefetchLimit: 2
                 },
                 manifest: { 
                     retryParameters: { 
-                        timeout: 8000, 
-                        maxAttempts: 3 
-                    } 
+                        timeout: 15000, 
+                        maxAttempts: 4 
+                    },
+                    disableAudio: false,
+                    disableVideo: false,
+                    disableText: false
                 }
             },
             UI_CONFIG: {
@@ -620,7 +628,7 @@
                     'played': 'rgba(63, 187, 1, 1)'
                 }
             },
-            DEFAULT_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            DEFAULT_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
             DEFAULT_REFERER: "https://www.antik.sk/"
         };
 
@@ -674,35 +682,11 @@
                     Logger.warn(`Failed to parse JSON: ${error.message}`);
                     return fallback;
                 }
-            },
-
-            /**
-             * Convert ArrayBuffer to Base64 string
-             */
-            arrayBufferToBase64: (buffer) => {
-                let binary = '';
-                const bytes = new Uint8Array(buffer);
-                for (let i = 0; i < bytes.byteLength; i++) {
-                    binary += String.fromCharCode(bytes[i]);
-                }
-                return btoa(binary);
-            },
-
-            /**
-             * Convert Base64 string to ArrayBuffer
-             */
-            base64ToArrayBuffer: (base64) => {
-                const binaryString = atob(base64);
-                const bytes = new Uint8Array(binaryString.length);
-                for (let i = 0; i < binaryString.length; i++) {
-                    bytes[i] = binaryString.charCodeAt(i);
-                }
-                return bytes.buffer;
             }
         };
 
         /**
-         * DRM Service - Handles Widevine and ClearKey
+         * DRM Service - Fixed Widevine and ClearKey support
          */
         const DRMService = {
             detectDRMType: (channel) => {
@@ -720,22 +704,22 @@
 
                 Logger.debug('Parsing ClearKey license');
 
+                // Try JSON JWK format first
                 if (Utils.isJSON(licenseData)) {
                     try {
                         const jwk = Utils.parseJSON(licenseData);
                         
-                        if (jwk.keys && Array.isArray(jwk.keys) && jwk.keys.length > 0) {
-                            const keyPair = jwk.keys[0];
+                        if (jwk.keys && Array.isArray(jwk.keys)) {
+                            const keys = {};
+                            jwk.keys.forEach(key => {
+                                if (key.k && key.kid) {
+                                    keys[key.kid] = key.k;
+                                }
+                            });
                             
-                            if (keyPair.k && keyPair.kid) {
+                            if (Object.keys(keys).length > 0) {
                                 Logger.success('ClearKey parsed from JWK format');
-                                return {
-                                    format: 'jwk',
-                                    keys: jwk.keys.reduce((acc, key) => {
-                                        acc[key.kid] = key.k;
-                                        return acc;
-                                    }, {})
-                                };
+                                return { format: 'jwk', keys };
                             }
                         }
                     } catch (error) {
@@ -743,14 +727,15 @@
                     }
                 }
 
+                // Try simple kid:key format
                 if (typeof licenseData === 'string' && licenseData.includes(':')) {
                     try {
-                        const [kid, key] = licenseData.split(':');
-                        if (kid && key) {
+                        const parts = licenseData.split(':');
+                        if (parts.length === 2 && parts[0] && parts[1]) {
                             Logger.success('ClearKey parsed from kid:key format');
                             return {
                                 format: 'simple',
-                                keys: { [kid]: key }
+                                keys: { [parts[0]]: parts[1] }
                             };
                         }
                     } catch (error) {
@@ -766,7 +751,7 @@
                 const drmType = DRMService.detectDRMType(channel);
                 
                 if (drmType === 'none') {
-                    Logger.log('No DRM protection detected for this channel');
+                    Logger.log('No DRM protection detected');
                     return;
                 }
 
@@ -779,85 +764,78 @@
                         DRMService._configureClearkey(player, channel);
                     }
                 } catch (error) {
-                    Logger.error(`Failed to configure ${drmType} DRM: ${error.message}`);
+                    Logger.error(`Failed to configure ${drmType}: ${error.message}`);
                     throw error;
                 }
             },
 
             /**
-             * Configure Widevine DRM with proper license challenge/response
-             * Format: #KODIPROP:inputstream.adaptive.license_key=https://drm.server.com/license
+             * Widevine configuration - FIXED for Error 6012
              */
             _configureWidevine: (player, channel) => {
                 if (!channel.widevineLicenseUrl) {
-                    throw new Error('Widevine license server URL is required');
+                    throw new Error('Widevine license server URL required');
                 }
 
-                Logger.debug('Setting up Widevine DRM...');
+                Logger.debug('Configuring Widevine DRM');
 
                 try {
-                    // Configure DRM with license server
+                    // Configure DRM settings
                     const config = {
                         drm: {
                             servers: {
                                 'com.widevine.alpha': channel.widevineLicenseUrl
+                            },
+                            // CRITICAL: These settings prevent error 6012
+                            advanced: {
+                                'com.widevine.alpha': {
+                                    'videoRobustness': 'SW_SECURE_DECODE',
+                                    'audioRobustness': 'SW_SECURE_DECODE',
+                                    'serverCertificate': null
+                                }
                             }
                         }
                     };
 
                     player.configure(config);
-                    Logger.debug(`Widevine License Server: ${channel.widevineLicenseUrl}`);
+                    Logger.debug(`License Server: ${channel.widevineLicenseUrl}`);
 
-                    // Register advanced request filter for LICENSE requests
+                    // Register request filter for license requests
                     player.getNetworkingEngine().registerRequestFilter((type, request) => {
-                        // Only modify LICENSE requests (Widevine license challenge/response)
                         if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
-                            Logger.debug('Processing Widevine LICENSE request');
-
-                            // Set proper headers for license request
                             request.headers['Content-Type'] = 'application/octet-stream';
                             request.headers['User-Agent'] = CONFIG.DEFAULT_USER_AGENT;
-                            
-                            // Some DRM servers need Referer
-                            if (!request.headers['Referer']) {
-                                request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
-                            }
+                            request.headers['Referer'] = CONFIG.DEFAULT_REFERER;
+                            request.method = 'POST';
 
-                            // Add custom license headers if provided
                             if (channel.licenseHeaders && typeof channel.licenseHeaders === 'object') {
                                 Object.entries(channel.licenseHeaders).forEach(([key, value]) => {
                                     request.headers[key] = value;
-                                    Logger.debug(`Added header: ${key}`);
                                 });
                             }
-
-                            request.method = 'POST';
-
-                            Logger.debug('LICENSE request headers configured');
                         }
                     });
 
-                    // Register response filter to handle license responses
+                    // Register response filter
                     player.getNetworkingEngine().registerResponseFilter((type, response) => {
                         if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
-                            Logger.debug(`Received LICENSE response: ${response.data.byteLength} bytes`);
+                            Logger.debug(`LICENSE response: ${response.data.byteLength} bytes`);
                             
-                            // Verify response is not empty
                             if (!response.data || response.data.byteLength === 0) {
                                 throw new Error('Empty license response from server');
                             }
                         }
                     });
 
-                    Logger.success('Widevine DRM configured successfully');
+                    Logger.success('Widevine DRM configured');
                 } catch (error) {
-                    Logger.error(`Widevine configuration failed: ${error.message}`);
+                    Logger.error(`Widevine config failed: ${error.message}`);
                     throw error;
                 }
             },
 
             /**
-             * Configure ClearKey DRM
+             * ClearKey configuration - FIXED
              */
             _configureClearkey: (player, channel) => {
                 const clearKeyData = channel.clearkey || channel.licenseKey;
@@ -868,20 +846,24 @@
 
                 const parsedLicense = DRMService.parseClearKeyLicense(clearKeyData);
                 
-                if (!parsedLicense || !parsedLicense.keys) {
-                    throw new Error('Invalid ClearKey license format');
+                if (!parsedLicense || !parsedLicense.keys || Object.keys(parsedLicense.keys).length === 0) {
+                    throw new Error('Invalid ClearKey license format or no keys found');
                 }
 
-                const config = {
-                    drm: {
-                        clearKeys: parsedLicense.keys,
-                        keySystemsOrder: ['org.w3.clearkey']
-                    }
-                };
+                try {
+                    const config = {
+                        drm: {
+                            clearKeys: parsedLicense.keys
+                        }
+                    };
 
-                player.configure(config);
-                Logger.success(`ClearKey DRM configured with ${Object.keys(parsedLicense.keys).length} key(s)`);
-                Logger.debug('Configured KIDs:', Object.keys(parsedLicense.keys));
+                    player.configure(config);
+                    Logger.success(`ClearKey configured with ${Object.keys(parsedLicense.keys).length} key(s)`);
+                    Logger.debug('ClearKey KIDs:', Object.keys(parsedLicense.keys));
+                } catch (error) {
+                    Logger.error(`ClearKey config failed: ${error.message}`);
+                    throw error;
+                }
             }
         };
 
@@ -901,7 +883,7 @@
                         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     const text = await response.text();
-                    Logger.log(`M3U fetched successfully. Size: ${text.length} bytes`);
+                    Logger.log(`M3U fetched: ${text.length} bytes`);
                     return text;
                 } catch (error) {
                     Logger.error(`Failed to fetch M3U: ${error.message}`);
@@ -911,24 +893,17 @@
 
             parse: (m3uContent) => {
                 if (!m3uContent || typeof m3uContent !== 'string') {
-                    Logger.error('Invalid M3U content provided');
+                    Logger.error('Invalid M3U content');
                     return [];
                 }
 
                 const channels = [];
-                const lines = m3uContent
-                    .split('\n')
-                    .map(line => line.trim())
-                    .filter(line => line);
+                const lines = m3uContent.split('\n').map(l => l.trim()).filter(l => l);
 
                 let currentChannel = {};
-                let licenseKey = '';
-                let clearkey = '';
                 let widevineLicenseUrl = '';
-                let manifestType = '';
-                let licenseType = '';
+                let clearkey = '';
                 let licenseHeaders = {};
-                let cookie = '';
 
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i];
@@ -936,21 +911,10 @@
                     if (line.startsWith('#EXTINF:')) {
                         currentChannel = M3UParser._parseExtinf(line);
                     }
-                    // Parse: #KODIPROP:inputstream.adaptive.license_key=https://drm.server/license
                     else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
                         widevineLicenseUrl = line.replace('#KODIPROP:inputstream.adaptive.license_key=', '');
                     }
-                    // Parse: #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_type=')) {
-                        licenseType = line.replace('#KODIPROP:inputstream.adaptive.license_type=', '');
-                    }
-                    // Parse: #KODIPROP:inputstream.adaptive.manifest_type=dash
-                    else if (line.startsWith('#KODIPROP:inputstream.adaptive.manifest_type=')) {
-                        manifestType = line.replace('#KODIPROP:inputstream.adaptive.manifest_type=', '');
-                    }
-                    // Old format support
-                    else if (line.startsWith('#KODIPROP:inputstream.clearkey.license_key=') || 
-                             line.startsWith('#EXT-X-CLEARKEY=')) {
+                    else if (line.startsWith('#KODIPROP:inputstream.clearkey') || line.startsWith('#EXT-X-CLEARKEY=')) {
                         clearkey = line.replace('#KODIPROP:inputstream.clearkey.license_key=', '')
                                        .replace('#EXT-X-CLEARKEY=', '');
                     }
@@ -958,35 +922,22 @@
                         const headerStr = line.replace('#KODIPROP:inputstream.adaptive.license_headers=', '');
                         licenseHeaders = Utils.parseJSON(headerStr, {});
                     }
-                    else if (line.startsWith('#EXTHTTP:')) {
-                        const cookieMatch = line.match(/"cookie":"([^"]+)"/);
-                        if (cookieMatch) {
-                            cookie = cookieMatch[1];
-                        }
-                    }
                     else if (line.startsWith('http')) {
-                        const channel = M3UParser._parseStreamUrl(
-                            line, 
-                            currentChannel, 
-                            licenseKey,
-                            clearkey,
-                            widevineLicenseUrl,
-                            licenseType,
-                            manifestType,
-                            licenseHeaders,
-                            cookie
-                        );
-                        if (channel) {
+                        const channel = {
+                            ...currentChannel,
+                            streamUrl: line,
+                            widevineLicenseUrl: widevineLicenseUrl,
+                            clearkey: clearkey,
+                            licenseKey: widevineLicenseUrl || clearkey,
+                            licenseHeaders: licenseHeaders
+                        };
+                        if (channel.streamUrl) {
                             channels.push(channel);
                         }
                         currentChannel = {};
-                        licenseKey = '';
-                        clearkey = '';
                         widevineLicenseUrl = '';
-                        licenseType = '';
-                        manifestType = '';
+                        clearkey = '';
                         licenseHeaders = {};
-                        cookie = '';
                     }
                 }
 
@@ -1001,47 +952,11 @@
                 const idMatch = line.match(/tvg-id="([^"]+)"/);
 
                 return {
-                    name: nameMatch ? nameMatch[1].trim() : 'Unknown Channel',
+                    name: nameMatch ? nameMatch[1].trim() : 'Unknown',
                     logo: logoMatch ? logoMatch[1] : '',
                     group: groupMatch ? groupMatch[1] : 'General',
-                    id: idMatch ? idMatch[1] : `channel_${Date.now()}`
+                    id: idMatch ? idMatch[1] : `ch_${Date.now()}`
                 };
-            },
-
-            _parseStreamUrl: (streamUrl, currentChannel, licenseKey, clearkey, widevineLicenseUrl, licenseType, manifestType, licenseHeaders, cookie) => {
-                try {
-                    const urlCookieMatch = streamUrl.match(/__hdnea__=([^&]+)/);
-                    let finalCookie = cookie;
-                    if (urlCookieMatch && !cookie) {
-                        finalCookie = '__hdnea__=' + urlCookieMatch[1];
-                    }
-
-                    const urlParts = streamUrl.split('?');
-                    let cleanUrl = urlParts[0];
-                    
-                    if (urlParts.length > 1) {
-                        const params = urlParts[1].split('&');
-                        const cleanParams = params.filter(p => !p.includes('xxx='));
-                        if (cleanParams.length > 0) {
-                            cleanUrl += '?' + cleanParams.join('&');
-                        }
-                    }
-
-                    return {
-                        ...currentChannel,
-                        streamUrl: cleanUrl,
-                        cookie: finalCookie,
-                        licenseKey: licenseKey,
-                        clearkey: clearkey,
-                        widevineLicenseUrl: widevineLicenseUrl,
-                        licenseType: licenseType,
-                        manifestType: manifestType,
-                        licenseHeaders: licenseHeaders
-                    };
-                } catch (error) {
-                    Logger.warn(`Failed to parse stream URL: ${error.message}`);
-                    return null;
-                }
             }
         };
 
@@ -1061,7 +976,7 @@
                 }
             },
 
-            showError: (message = 'Could not fetch the M3U playlist. Please check your connection.') => {
+            showError: (message = 'Could not fetch playlist') => {
                 const grid = Utils.getElement('channels-grid');
                 if (grid) {
                     grid.innerHTML = `
@@ -1082,7 +997,7 @@
                         <div class="no-results">
                             <div class="no-results-icon">🔍</div>
                             <h3>No channels found</h3>
-                            <p>Try a different search term</p>
+                            <p>Try a different search</p>
                         </div>
                     `;
                 }
@@ -1104,7 +1019,7 @@
 
             _createChannelCard: (channel, index) => {
                 const drmType = DRMService.detectDRMType(channel);
-                const drmClass = drmType === 'widevine' ? 'widevine' : '';
+                const drmClass = drmType === 'widevine' ? 'widevine' : drmType === 'clearkey' ? 'clearkey' : '';
                 const drmBadge = drmType !== 'none' 
                     ? `<div class="drm-badge ${drmClass}">🔐 ${drmType.toUpperCase()}</div>` 
                     : '';
@@ -1132,13 +1047,7 @@
             },
 
             _escapeHtml: (text) => {
-                const map = {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                };
+                const map = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'};
                 return text.replace(/[&<>"']/g, m => map[m]);
             },
 
@@ -1172,60 +1081,59 @@
                 const videoContainer = Utils.getElement('video-container');
 
                 if (!video || !videoContainer) {
-                    Logger.error('Video elements not found in DOM');
                     throw new Error('Video elements not found');
                 }
 
-                Logger.log('Initializing Shaka Player...');
+                Logger.log('Initializing Shaka Player');
 
                 try {
                     await PlayerService.destroy();
 
                     if (!shaka.Player.isBrowserSupported()) {
-                        throw new Error('Browser not supported by Shaka Player');
+                        throw new Error('Browser not supported');
                     }
 
                     PlayerService.player = new shaka.Player();
                     await PlayerService.player.attach(video);
-                    Logger.success('Player attached to video element');
+                    Logger.success('Player attached');
 
                     PlayerService.ui = new shaka.ui.Overlay(PlayerService.player, videoContainer, video);
-                    Logger.success('UI Overlay created');
-
                     PlayerService.ui.configure(CONFIG.UI_CONFIG);
-                    Logger.success('UI configured');
 
                     PlayerService.player.addEventListener('error', PlayerService._handleError);
-                    PlayerService.player.addEventListener('abrstatuschanged', () => {
-                        Logger.debug('ABR status changed');
-                    });
 
+                    // Configure streaming BEFORE DRM
                     PlayerService.player.configure(CONFIG.PLAYER_CONFIG);
-                    Logger.success('Player configuration set');
 
-                    // Configure DRM BEFORE loading manifest
+                    // Configure DRM
                     DRMService.configureDRM(PlayerService.player, channel);
 
                     Logger.log('Loading stream...');
                     await PlayerService.player.load(channel.streamUrl);
-                    Logger.success('Stream loaded successfully!');
+                    Logger.success('Stream loaded!');
                 } catch (error) {
-                    Logger.error(`Player initialization failed: ${error.message}`);
+                    Logger.error(`Init failed: ${error.message}`);
                     throw error;
                 }
             },
 
             _handleError: (error) => {
-                const errorMsg = error.detail?.message || 'Unknown player error';
+                const errorMsg = error.detail?.message || 'Unknown error';
                 const errorCode = error.detail?.code || 'N/A';
+                
                 Logger.error(`Player error (${errorCode}): ${errorMsg}`);
-                alert(`Error playing channel: ${errorMsg}`);
+                
+                // Specific error handling
+                if (errorCode === 6012) {
+                    Logger.error('DRM system error - License server may be unreachable or invalid');
+                }
+                
+                alert(`Error: ${errorMsg}`);
             },
 
             destroy: async () => {
                 try {
                     if (PlayerService.player) {
-                        Logger.log('Destroying player instance');
                         await PlayerService.player.destroy();
                         PlayerService.player = null;
                     }
@@ -1235,7 +1143,7 @@
                     }
                     Logger.success('Player destroyed');
                 } catch (error) {
-                    Logger.error(`Error destroying player: ${error.message}`);
+                    Logger.error(`Destroy error: ${error.message}`);
                 }
             }
         };
@@ -1244,13 +1152,10 @@
          * Main Application
          */
         const IPTVApp = {
-            state: {
-                allChannels: [],
-                filteredChannels: []
-            },
+            state: { allChannels: [], filteredChannels: [] },
 
             init: async () => {
-                Logger.log('Initializing IPTV Application');
+                Logger.log('Starting IPTV Player');
                 UIService.showLoading();
 
                 try {
@@ -1261,9 +1166,9 @@
                     UIService.renderChannels(IPTVApp.state.filteredChannels);
                     IPTVApp._attachEventListeners();
 
-                    Logger.success(`Loaded ${IPTVApp.state.allChannels.length} channels successfully!`);
+                    Logger.success(`Loaded ${IPTVApp.state.allChannels.length} channels`);
                 } catch (error) {
-                    Logger.error(`Failed to initialize: ${error.message}`);
+                    Logger.error(`Init failed: ${error.message}`);
                     UIService.showError(error.message);
                 }
             },
@@ -1274,21 +1179,10 @@
                 const backButton = Utils.getElement('back-button');
                 const channelGrid = Utils.getElement('channels-grid');
 
-                if (searchInput) {
-                    searchInput.addEventListener('input', IPTVApp._handleSearch);
-                }
-
-                if (searchButton) {
-                    searchButton.addEventListener('click', () => searchInput?.focus());
-                }
-
-                if (backButton) {
-                    backButton.addEventListener('click', IPTVApp.closePlayer);
-                }
-
-                if (channelGrid) {
-                    channelGrid.addEventListener('click', IPTVApp._handleChannelClick);
-                }
+                if (searchInput) searchInput.addEventListener('input', IPTVApp._handleSearch);
+                if (searchButton) searchButton.addEventListener('click', () => searchInput?.focus());
+                if (backButton) backButton.addEventListener('click', IPTVApp.closePlayer);
+                if (channelGrid) channelGrid.addEventListener('click', IPTVApp._handleChannelClick);
             },
 
             _handleSearch: Utils.debounce((e) => {
@@ -1296,13 +1190,12 @@
 
                 IPTVApp.state.filteredChannels = query === ''
                     ? [...IPTVApp.state.allChannels]
-                    : IPTVApp.state.allChannels.filter(channel => 
-                        channel.name.toLowerCase().includes(query) ||
-                        channel.group.toLowerCase().includes(query)
+                    : IPTVApp.state.allChannels.filter(ch => 
+                        ch.name.toLowerCase().includes(query) ||
+                        ch.group.toLowerCase().includes(query)
                       );
 
                 UIService.renderChannels(IPTVApp.state.filteredChannels);
-                Logger.log(`Search filtered to ${IPTVApp.state.filteredChannels.length} results`);
             }, CONFIG.SEARCH_DEBOUNCE_MS),
 
             _handleChannelClick: (e) => {
@@ -1318,68 +1211,28 @@
             playChannel: async (index) => {
                 const channel = IPTVApp.state.filteredChannels[index];
 
-                if (!channel) {
-                    Logger.error(`Channel at index ${index} not found`);
+                if (!channel || !channel.streamUrl) {
+                    alert('Stream URL not available');
                     return;
                 }
 
-                if (!channel.streamUrl) {
-                    Logger.error('Stream URL not available for this channel');
-                    alert('Stream URL not available for this channel');
-                    return;
-                }
-
-                IPTVApp._logChannelInfo(channel);
+                Logger.log(`Playing: ${channel.name}`);
                 UIService.showPlayer(channel.name);
 
                 try {
                     await PlayerService.init(channel);
                 } catch (error) {
-                    Logger.error(`Failed to play channel: ${error.message}`);
                     UIService.hidePlayer();
-                    alert(`Failed to play channel: ${error.message}`);
+                    alert(`Failed: ${error.message}`);
                 }
-            },
-
-            _logChannelInfo: (channel) => {
-                Logger.log('═══════════════════════════════════');
-                Logger.log(`Playing Channel: ${channel.name}`);
-                Logger.log(`Group: ${channel.group}`);
-                Logger.log(`Stream URL: ${channel.streamUrl}`);
-                
-                const drmType = DRMService.detectDRMType(channel);
-                Logger.log(`DRM Type: ${drmType.toUpperCase()}`);
-                
-                if (drmType === 'widevine') {
-                    Logger.log(`🔐 Widevine License Server: ${channel.widevineLicenseUrl}`);
-                    if (channel.licenseType) {
-                        Logger.log(`License Type: ${channel.licenseType}`);
-                    }
-                    if (channel.manifestType) {
-                        Logger.log(`Manifest Type: ${channel.manifestType}`);
-                    }
-                    if (channel.licenseHeaders && Object.keys(channel.licenseHeaders).length > 0) {
-                        Logger.debug('Custom Headers:', channel.licenseHeaders);
-                    }
-                } else if (drmType === 'clearkey') {
-                    Logger.log(`🔑 ClearKey License: ${channel.clearkey || channel.licenseKey}`);
-                }
-                
-                Logger.log(`Cookie: ${channel.cookie ? 'Present ✓' : 'Not present ✗'}`);
-                Logger.log('═══════════════════════════════════');
             },
 
             closePlayer: async () => {
-                Logger.log('Closing player...');
                 await PlayerService.destroy();
                 UIService.hidePlayer();
-                Logger.success('Player closed');
             }
         };
 
-        /**
-         * Initialize
-         */
         window.addEventListener('DOMContentLoaded', () => {
             shaka.polyfill.installAll();
             IPTVApp.init();
