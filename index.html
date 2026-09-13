@@ -1748,7 +1748,14 @@ const M3UParser = {
             if (response.status !== 200) {
                 Logger.error(`License request failed (${response.status}):`, responseText);
             } else if (Utils.isJSON(responseText)) {
-                Logger.warn('License server returned JSON instead of raw binary key data:', responseText);
+                const jsonPayload = Utils.parseJSON(responseText);
+    if (jsonPayload && jsonPayload.license) {
+        // Convert Base64 response to ArrayBuffer expected by EME
+        const rawBinary = shaka.util.Uint8ArrayUtils.fromBase64(jsonPayload.license);
+        response.data = rawBinary.buffer;
+        Logger.success('Unwrapped JSON DRM license payload');
+    }
+                //Logger.warn('License server returned JSON instead of raw binary key data:', responseText);
             }
         }
     });
