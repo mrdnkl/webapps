@@ -1,0 +1,10 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:20238
+#EXTINF:10.400000,
+https://seep.eu.org/line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:3F:0C:96&stream=855449&extension=ts
+#EXTINF:10.400000,
+https://seep.eu.org/line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:3F:0C:96&stream=855449&extension=ts
+#EXTINF:10.400000,
+https://seep.eu.org/line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:3F:0C:96&stream=855449&extension=ts
