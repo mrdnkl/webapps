@@ -1,7 +1,7 @@
 // ==========================================
 // CONFIGURATION
 // ==========================================
-const SOURCE_M3U_URL = "https://example.tv/playlist.m3u";
+const SOURCE_M3U_URL = "https://raw.githack.com/mrdnkl/webapps/refs/heads/main/cf/provider/magmaxcdncom.m3u";
 
 export default {
   async fetch(request, env, ctx) {
