@@ -1,4 +1,4 @@
-// Stream: https://my-tv.<your-subdomain>.workers.dev/live/stream.m3u8?id=811
+// USAGE: https://my-tv.<your-subdomain>.workers.dev/live/stream.m3u8?id=811
 // Playlist: https://my-tv.<your-subdomain>.workers.dev/playlist.m3u
 // ==========================================
 // CONFIGURATION
