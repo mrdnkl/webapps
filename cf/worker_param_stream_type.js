@@ -1,3 +1,4 @@
+// USAGE: your-worker/live/stream?id=811941.m3u8
 // ==========================================
 // CONFIGURATION
 // ==========================================
@@ -43,7 +44,7 @@ export default {
     }
 
     // ==========================================
-    // ROUTE 2: /live/stream.m3u8?id=811941.m3u8
+    // ROUTE 2: /live/stream?id=811941.m3u8
     // ==========================================
     if (url.pathname === "/live/stream") {
       const rawStreamId = url.searchParams.get("id");
@@ -106,7 +107,7 @@ function sanitizeStreamId(idParam) {
 }
 
 /**
- * Rewrites source playlist URLs to use /live/stream.m3u8?id=811941.m3u8
+ * Rewrites source playlist URLs to use /live/stream?id=811941.m3u8
  */
 function buildCustomM3U(rawM3u, workerDomain) {
   const lines = rawM3u.split("\n");
