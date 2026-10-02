@@ -45,7 +45,7 @@ export default {
     // ==========================================
     // ROUTE 2: /live/stream.m3u8?id=811941.m3u8
     // ==========================================
-    if (url.pathname === "/live/stream.m3u8") {
+    if (url.pathname === "/live/stream") {
       const rawStreamId = url.searchParams.get("id");
 
       if (!rawStreamId) {
@@ -120,7 +120,7 @@ function buildCustomM3U(rawM3u, workerDomain) {
 
       if (streamId) {
         // Appends .m3u8 extension to query parameter
-        rewrittenLines.push(`${workerDomain}/live/stream.m3u8?id=${streamId}.m3u8`);
+        rewrittenLines.push(`${workerDomain}/live/stream?id=${streamId}.m3u8`);
       } else {
         rewrittenLines.push(line);
       }
