@@ -1,251 +1,203 @@
 #EXTM3U
-#EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",BeIN1 SPORTS FHD
 # PLAYLIST CHECK BY MURID NAKAL
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",BeIN1 SPORTS FHD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=335dad778109954503dcbb21dc92015f:24bfd75d436cbf73168a2a2dccd40281
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ghwcl6hv68/out/v1/83536910d8034e9b9895a20fbe1c1687/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",beIN2 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",BeIN2 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",BEIN3 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",CANAL5 MX FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d695093ea3e66d75a4d213a3e2cbf360:01be3f645e89a067d2786c295f68dde4
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ntkdl68eob/out/v1/bd5dfb7676994383881bc6e71877d29d/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",CAZETV FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=34475edab991ad5e92548aebd710410a:501b209cccd323ac00bf5ac15b406cb4
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/3ynrpdanq2/out/v1/81fd4c26584044d2b1a1cc5b32fa9af0/cenc.mpd?
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",CBS NETWORK FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=38860f7afdae191a91be6ec3de367010:9beffbfff68efb289f2a556070057a7e
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/y8csztrnlv/out/v1/e48799ec18b041eabdb969bcc780360a/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",CBS SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/5qz8wmdome/out/v1/b9323e853dce427eac214b77bd48a204/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",D SPORTS + FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=f836853d8eac19446ed9535f5fc568b1:b3bc5ef00602b29abac7e482d3d9fbf3
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/z5oyxzsxdk/out/v1/7695a0f64a0e424b973d5b09a2a3eb91/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",D SPORTS2 + FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=03f12d6a3dbfd3a6fa7dd7f6417e0c11:ea07b87acdf2e45be824cde4a1cf3504
 https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/rgilyeubta/out/v1/09a67027b18f4fd78aaa3794a2aacfe8/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FANCODE FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FANCODE2 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FOX DEPORTES FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d1a163914db8ffad2c3e94f979896a0d:9728800a3959aafdd5b0bcfbf3768811
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/vkpoljjpkj/out/v1/502bcf68b3514cd28a220e6f0a43816f/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FOX1 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=5466ebd70704bdeb657f0abf3c5ca4ef:bdd79b72d8e48ed483aa623cc38a8a16
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/fsu3wl2rwb/out/v1/be61206c04e643349d53fb22301f3b50/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FOX2 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FUBO NETWORK USA
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fa5e8db5359fc7d1f15207d5de2a3ac4:78a6c0a41972dfdba2145ae0ad4bd681
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/xtkswns2yn/out/v1/9c348c1bc962495a9420f01ac0964a86/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",FUBO SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=42f72c025dd53039244adc13b7e31dad:a7bd941a19f6dd14f3004a623a6ad3a1
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1wlv9dr4vx/out/v1/632322be5f1047acb2472f90f8857182/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",NBC SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=36a385124dcdfb2f0969935065e03afa:ccecd65514dff22eae493b975ccf9a9e
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dx5hfbpk7u/out/v1/c14185a397544650b9761d43ad2e8e91/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",NFL NETWORK FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=b6e646d15d2ddfcf74c41ef6574b90fc:5c8bb38d3758dca73ad0ba63d6ba2841
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/jvrno3jef2/out/v1/0f66f4d875f04d7d91f6210461dd7b52/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",NFL SERVER FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=b6e646d15d2ddfcf74c41ef6574b90fc:5c8bb38d3758dca73ad0ba63d6ba2841
 https://otte.cache.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/jvrno3jef2/out/v1/0f66f4d875f04d7d91f6210461dd7b52/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PARAMOUNT+ FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=3a1c451ffc0dd98444c3950b9f8333f4:a6e6dd3d407c3ca531d817e72fd240a4
 https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/startover/clients/dash/manipulated-manifest-pdx-prod/enc/sryyedmu8v/out/v1/4dc59fd7700642b4be87f5e612b19df2/0e37f950-6ffa-4f63-b88d-dd6c4fabd003-cenc.mpd?aws_sessionId=1124ba46-5484-4b40-bebb-4458920b81d0
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PARAMOUNT+ FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9896b6a4790e0fe7d1b1253a5901949a:49dd5b421ca126b7d46daaebff358f13
 https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/startover/clients/dash/manipulated-manifest-pdx-prod/enc/cyh3d8omib/out/v1/7897c3626f174e9b97cc71961505054d/04f65e10-cbf8-46b8-af07-6fd7c6e921ed-cenc.mpd?aws_sessionId=9577f0c8-80de-4cc4-987f-f7f46f25cce7
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER SPORTS1 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER SPORTS2 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER1 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER2 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER3 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",PREMIER5 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=332f62eb3cae824e98a4124da29a7d31:d1698cda3d040f9051125a61745b596b
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1obktrybht/out/v1/08265453c8f64d9fbeb3cf43764403a8/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",REDZONE FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=85f340146e46533b39d1415d90746352:448aafcc613ddfd448f14d9275eda19b
 https://otte.cache.aiv-cdn.net/iad-nitro/live/dash/enc/tppdoitn9n/out/v1/9828b56372fb434fafdcf88c72052d01/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",SportDigital Fussball
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://raw.githubusercontent.com/sm-monirulislam/Upcoming-and-Live-Sports-Data/main/match_image/Boca%20Juniors%20Vs%20Vasco%20da%20Gama.jpg",SportDigital Fussball
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd?
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",SPORTV FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",SPORTV2 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9009b7189e3e68cc09d17811f2beb55a:dd3f96a94c909da48ff40c92aabf8cf3
 https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/4yiko4it8k/out/v1/b77dd424c745443aba2f3f88d418f797/cenc-sd.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",SPORTV3 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=902e5ec0e3d05e665daa32fc23f4f59e:7b2322a273843921a43e2c61dac7cae3
 https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/6otiglnptp/out/v1/add7499679b0422cb6791f7701f95ecc/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TENNIS 2 FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=59f50679c9e60963bd0cb6640992aaaa:8685817c4d31f322e08940feeae2855a
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bfigtl960n/out/v1/5ba5484550e84681bff2e8ca994266c1/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TNT1UK SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TNT1UK SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca
 https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TNT2UK SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TNT4UK SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TSN1 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=14eeabf30c14b7fbf3008c03099ce011:17d2ac8dbc5429bd70af3433aa12158d
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w0rehjjrwe/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TSN2 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=85b277daf5aae05833fe43a68f587968:d52d7e9bc0bcd98787efd547ac91eca0
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/cjglydxghe/out/v1/8977baf175da4b94873194613dd3fe55/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TSN3 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d3250252765347a0c2603c6cb4869f8c:0c19319460da7e9ed816db46ce839b37
 https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/lsibpqruq1/out/v1/748887d614a84913ba8bcdf3c82823e6/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TSN4 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=abc5b2883121012850ebda05b528c5ec:e5250924f4b738905f7163a0134587a7
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ihys8nw4wv/out/v1/fde190f369484bc6b6117cc16cd82a9f/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TSN5 SPORTS FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=385ceb9714b75e0cef61254f80b31002:18dce92a2891fee68d21ede5173230f8
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/cscevwljkq/out/v1/972185041b244140860b7d56398e9aaf/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",TUDN FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=763ce1ebcaf23502c8cf357c6ef423e1:0c5e6c0820a1ea28753721db00272411
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/o2vy4aahsh/out/v1/e293c932745a44dcaf897573dfc53532/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",WILLOW ALT
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=a71918fcc2f12066f70b7c39b0e0dcf3:a5e35121d4f6f16694bea15334f14814
 https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",WILLOW FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=de134773b445a7d9c41e41aa5c345bbf:b0f546e2413a82fdad302ceac53c0493
 https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gn7vodveso/out/v1/f63636d3d10f4b0b9d06b55333f30f14/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",WILLOW FHD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=a71918fcc2f12066f70b7c39b0e0dcf3:a5e35121d4f6f16694bea15334f14814
 https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",WILLOW HD
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.ibb.co.com/1GwGK8BR/tv2.png",WILLOW SPORTS
-# PLAYLIST CHECK BY MURID NAKAL
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247
 https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd
